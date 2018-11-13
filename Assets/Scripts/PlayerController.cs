@@ -12,6 +12,7 @@ public class PlayerController : NetworkBehaviour {
 
     private Vector3 playerPos;
     private float xPos;
+    private bool ballExist = false;
 
     // Update is called once per frame
     void Update()
@@ -29,7 +30,7 @@ public class PlayerController : NetworkBehaviour {
             playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
             transform.position = playerPos;
 
-            if(Input.GetKey(KeyCode.Space) && !GameObject.FindGameObjectWithTag("Ball")){
+            if(Input.GetKey(KeyCode.Space) && ballExist == false){
                 CmdSpawnBall();
             }
 #else
@@ -53,6 +54,7 @@ public class PlayerController : NetworkBehaviour {
     void CmdSpawnBall() {
         GameObject Ball = Instantiate(ball, spawnBall.transform.position, Quaternion.identity) as GameObject;
         Ball.transform.SetParent(transform);
+        ballExist = true;
         NetworkServer.Spawn(Ball);
     }
 
