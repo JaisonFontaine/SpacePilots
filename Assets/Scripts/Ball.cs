@@ -1,8 +1,9 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Networking;
 
-public class Ball : MonoBehaviour {
+public class Ball : NetworkBehaviour {
 
     public float ballInitialVelocity = 600f;
 
@@ -16,20 +17,23 @@ public class Ball : MonoBehaviour {
     void Update() {
 #if (UNITY_EDITOR || UNITY_STANDALONE)
         if (Input.GetButtonDown("Fire1") && ballInPlay == false) {
-            transform.parent = null;
-            ballInPlay = true;
-            rb.isKinematic = false;
-            rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
+            CmdShootBall();
         }
 #else
         Touch touch = Input.GetTouch(0);
 
         if (Input.touchCount == 2 && ballInPlay == false) {
-            transform.parent = null;
-            ballInPlay = true;
-            rb.isKinematic = false;
-            rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
+            CmdShootBall();
         }
 #endif
+    }
+
+    [Command]
+    void CmdShootBall()
+    {
+        transform.parent = null;
+        ballInPlay = true;
+        rb.isKinematic = false;
+        rb.AddForce(new Vector3(ballInitialVelocity, ballInitialVelocity, 0));
     }
 }

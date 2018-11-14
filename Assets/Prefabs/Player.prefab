@@ -20,7 +20,6 @@ GameObject:
   m_Component:
   - component: {fileID: 4784801502748454}
   - component: {fileID: 114893793700086898}
-  - component: {fileID: 114741724606811976}
   m_Layer: 0
   m_Name: SpawnBall
   m_TagString: Untagged
@@ -199,17 +198,6 @@ MonoBehaviour:
   m_SnapThreshold: 5
   m_InterpolateRotation: 1
   m_InterpolateMovement: 1
---- !u!114 &114741724606811976
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1267083683467628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1050975500, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114816910203390394
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -224,6 +212,9 @@ MonoBehaviour:
   paddleSpeed: 0.5
   ball: {fileID: 1667907487900972, guid: fbc77a11a02310d4d87c11263575c7f2, type: 2}
   spawnBall: {fileID: 1267083683467628}
+  bricks: {fileID: 1370965369752032, guid: 4c3b05f83c5ef314487f5b2a3733e7b2, type: 2}
+  spawnBricks: {fileID: 1009631145905354, guid: 5b3a72b5bed09e249b2bb2851d916d8d,
+    type: 2}
   isSpawnHaut: 0
 --- !u!114 &114893793700086898
 MonoBehaviour:

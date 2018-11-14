@@ -8,13 +8,25 @@ public class PlayerController : NetworkBehaviour {
     public float paddleSpeed = 1f;
     public GameObject ball;
     public GameObject spawnBall;
+    public GameObject bricks;
+    public GameObject spawnBricks;
     public bool isSpawnHaut = false;
 
     private Vector3 playerPos;
     private float xPos;
     private bool ballExist = false;
 
-    // Update is called once per frame
+    void Start()
+    {
+        if (!GameObject.FindWithTag("Bricks")) {
+            GameObject Bricks = Instantiate(bricks, spawnBricks.transform.position, Quaternion.identity) as GameObject;
+            NetworkServer.Spawn(Bricks);
+        }
+
+        Debug.Log(NetworkServer.connections);
+
+    }
+
     void Update()
     {
         if (isLocalPlayer)
