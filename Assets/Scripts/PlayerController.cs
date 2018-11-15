@@ -22,15 +22,10 @@ public class PlayerController : NetworkBehaviour {
             GameObject Bricks = Instantiate(bricks, spawnBricks.transform.position, Quaternion.identity) as GameObject;
             NetworkServer.Spawn(Bricks);
         }
-
-        Debug.Log(NetworkServer.connections);
-
     }
 
-    void Update()
-    {
-        if (isLocalPlayer)
-        {
+    void Update() {
+        if (isLocalPlayer) {
 #if (UNITY_EDITOR || UNITY_STANDALONE)
             if (isSpawnHaut)
             {
