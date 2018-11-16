@@ -3,124 +3,82 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
-using UnityEngine.Networking;
 
-public class GM : NetworkBehaviour {
+public class GM : MonoBehaviour {
 
-    [SyncVar] public int livesPlayer1 = 3;
-    [SyncVar] public int livesPlayer2 = 3;
-    [SyncVar] public int nbBricks = 20;
+    public int lives = 3;
+    public int bricks = 20;
     public float resetDelay = 1f;
-
-    public GameObject ball;
-    public GameObject spawnBall;
-    public GameObject bricks;
-    public GameObject spawnBricks;
+    public Text livesText;
+    public GameObject gameOver;
+    public GameObject youWon;
+    public GameObject bricksPrefab;
+    public GameObject paddle;
     public GameObject deathParticles;
+    public static GM instance = null;
 
-    private PlayerController ScriptPlayerController;
+    private GameObject clonePaddle;
 
-    private GameObject cloneBall;
+    // Use this for initialization
+    void Awake()
+    {
+        if (instance == null)
+            instance = this;
+        else if (instance != this)
+            Destroy(gameObject);
 
-    void Start() {
-        ScriptPlayerController = GetComponent<PlayerController>();
+        Setup();
 
-        if (!GameObject.FindWithTag("Bricks")) {
-            GameObject Bricks = Instantiate(bricks, spawnBricks.transform.position, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(Bricks);
-        }
     }
 
-    void CheckGameOver1() {
-        /*if (nbBricks < 1)
-        {
-            GameObject.Find("YouWon").SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
-        }*/
-
-        if (livesPlayer1 < 1) {
-            livesPlayer1 = 0;
-            GameObject.Find("GameOver").SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
-        }
-
-        if (livesPlayer2 < 1)
-        {
-            GameObject.Find("YouWon").SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
-        }
+    public void Setup()
+    {
+        clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
+        Instantiate(bricksPrefab, transform.position, Quaternion.identity);
     }
 
-    void CheckGameOver2() {
-        /*if (nbBricks < 1)
+    void CheckGameOver()
+    {
+        if (bricks < 1)
         {
-            GameObject.Find("YouWon").SetActive(true);
-            Time.timeScale = .25f;
-            Invoke("Reset", resetDelay);
-        }*/
-
-        if (livesPlayer2 < 1)
-        {
-            livesPlayer2 = 0;
-            GameObject.Find("GameOver").SetActive(true);
+            youWon.SetActive(true);
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }
 
-        if (livesPlayer1 < 1)
+        if (lives < 1)
         {
-            GameObject.Find("YouWon").SetActive(true);
+            gameOver.SetActive(true);
             Time.timeScale = .25f;
             Invoke("Reset", resetDelay);
         }
+
     }
 
-    void Reset() {
+    void Reset()
+    {
         Time.timeScale = 1f;
         SceneManager.LoadScene(0);
     }
 
-    [Command]
-    public void CmdLoseLife1() {
-        livesPlayer1--;
-        RpcMajLives1(livesPlayer1);
-
-        Instantiate(deathParticles, transform.position, Quaternion.identity);
-        Destroy(ScriptPlayerController.cloneBall);
-        Invoke("SetupBall", resetDelay);
-        CheckGameOver1();
+    public void LoseLife()
+    {
+        lives--;
+        livesText.text = "Lives: " + lives;
+        Instantiate(deathParticles, clonePaddle.transform.position, Quaternion.identity);
+        Destroy(clonePaddle);
+        Invoke("SetupPaddle", resetDelay);
+        CheckGameOver();
     }
 
-    [Command]
-    public void CmdLoseLife2() {
-        livesPlayer2--;
-        RpcMajLives2(livesPlayer2);
-
-        Instantiate(deathParticles, transform.position, Quaternion.identity);
-        Destroy(ScriptPlayerController.cloneBall);
-        Invoke("SetupBall", resetDelay);
-        CheckGameOver2();
+    void SetupPaddle()
+    {
+        clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
     }
 
-    [ClientRpc]
-    public void RpcMajLives1(int live1) {
-        GameObject.Find("LivesPlayer1").GetComponent<Text>().text = "Lives player 1 : " + live1;
-    }
-
-    [ClientRpc]
-    public void RpcMajLives2(int live2) {
-        GameObject.Find("LivesPlayer2").GetComponent<Text>().text = "Lives player 2 : " + live2;
-    }
-
-    void SetupBall() {
-        ScriptPlayerController.CmdSpawnBall();
-    }
-
-    [Command]
-    public void CmdDestroyBrick() {
-        nbBricks--;
+    public void DestroyBrick()
+    {
+        bricks--;
+        CheckGameOver();
     }
 }

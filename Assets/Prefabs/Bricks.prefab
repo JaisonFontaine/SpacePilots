@@ -23,8 +23,6 @@ GameObject:
   - component: {fileID: 23304369345205886}
   - component: {fileID: 65656835031396722}
   - component: {fileID: 114155998296454954}
-  - component: {fileID: 114614817761228044}
-  - component: {fileID: 114935808937594070}
   m_Layer: 0
   m_Name: Brick (4)
   m_TagString: Untagged
@@ -44,8 +42,6 @@ GameObject:
   - component: {fileID: 23492371338864028}
   - component: {fileID: 65008564607978030}
   - component: {fileID: 114073056951376024}
-  - component: {fileID: 114622690451741752}
-  - component: {fileID: 114603371073839194}
   m_Layer: 0
   m_Name: Brick (6)
   m_TagString: Untagged
@@ -65,8 +61,6 @@ GameObject:
   - component: {fileID: 23744558212829492}
   - component: {fileID: 65275901675454982}
   - component: {fileID: 114732661051468092}
-  - component: {fileID: 114408967886908058}
-  - component: {fileID: 114408704267906724}
   m_Layer: 0
   m_Name: Brick (4)
   m_TagString: Untagged
@@ -86,8 +80,6 @@ GameObject:
   - component: {fileID: 23870670455874334}
   - component: {fileID: 65971221635467988}
   - component: {fileID: 114001485536203270}
-  - component: {fileID: 114190905517725904}
-  - component: {fileID: 114445882183731696}
   m_Layer: 0
   m_Name: Brick (1)
   m_TagString: Untagged
@@ -107,8 +99,6 @@ GameObject:
   - component: {fileID: 23439524173784440}
   - component: {fileID: 65663093820055748}
   - component: {fileID: 114612699388934968}
-  - component: {fileID: 114255729081169962}
-  - component: {fileID: 114948308177163972}
   m_Layer: 0
   m_Name: Brick (2)
   m_TagString: Untagged
@@ -128,8 +118,6 @@ GameObject:
   - component: {fileID: 23026924960448532}
   - component: {fileID: 65631353154429372}
   - component: {fileID: 114654610038771830}
-  - component: {fileID: 114802514342256974}
-  - component: {fileID: 114114613320566258}
   m_Layer: 0
   m_Name: Brick (3)
   m_TagString: Untagged
@@ -149,8 +137,6 @@ GameObject:
   - component: {fileID: 23575448823675882}
   - component: {fileID: 65433312848942716}
   - component: {fileID: 114842395304164188}
-  - component: {fileID: 114618023958877782}
-  - component: {fileID: 114068372333178144}
   m_Layer: 0
   m_Name: Brick (4)
   m_TagString: Untagged
@@ -170,8 +156,6 @@ GameObject:
   - component: {fileID: 23663569531098472}
   - component: {fileID: 65765452788126376}
   - component: {fileID: 114731279913085720}
-  - component: {fileID: 114394528575276868}
-  - component: {fileID: 114718672420767210}
   m_Layer: 0
   m_Name: Brick (5)
   m_TagString: Untagged
@@ -191,8 +175,6 @@ GameObject:
   - component: {fileID: 23050809076896840}
   - component: {fileID: 65255468746960906}
   - component: {fileID: 114638634329666472}
-  - component: {fileID: 114468291478468856}
-  - component: {fileID: 114098009518543750}
   m_Layer: 0
   m_Name: Brick (3)
   m_TagString: Untagged
@@ -212,8 +194,6 @@ GameObject:
   - component: {fileID: 23072809661335166}
   - component: {fileID: 65929909331641648}
   - component: {fileID: 114194171396992688}
-  - component: {fileID: 114635451750661884}
-  - component: {fileID: 114846090709694130}
   m_Layer: 0
   m_Name: Brick (1)
   m_TagString: Untagged
@@ -233,8 +213,6 @@ GameObject:
   - component: {fileID: 23124840052035758}
   - component: {fileID: 65503586225342884}
   - component: {fileID: 114950111399482864}
-  - component: {fileID: 114637098915031086}
-  - component: {fileID: 114390375982724204}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -269,8 +247,6 @@ GameObject:
   - component: {fileID: 23630090512179598}
   - component: {fileID: 65446384637690444}
   - component: {fileID: 114570877508095100}
-  - component: {fileID: 114399973130131168}
-  - component: {fileID: 114344194134713582}
   m_Layer: 0
   m_Name: Brick (2)
   m_TagString: Untagged
@@ -290,8 +266,6 @@ GameObject:
   - component: {fileID: 23824372869208416}
   - component: {fileID: 65573504001702550}
   - component: {fileID: 114727155774677716}
-  - component: {fileID: 114845455832013450}
-  - component: {fileID: 114733369126706662}
   m_Layer: 0
   m_Name: Brick (1)
   m_TagString: Untagged
@@ -311,8 +285,6 @@ GameObject:
   - component: {fileID: 23917437114452408}
   - component: {fileID: 65168694136615030}
   - component: {fileID: 114681501716518396}
-  - component: {fileID: 114685787038743634}
-  - component: {fileID: 114414651602924328}
   m_Layer: 0
   m_Name: Brick (6)
   m_TagString: Untagged
@@ -332,8 +304,6 @@ GameObject:
   - component: {fileID: 23567347500788964}
   - component: {fileID: 65607059268730620}
   - component: {fileID: 114483297434333516}
-  - component: {fileID: 114862623226139652}
-  - component: {fileID: 114278933691153124}
   m_Layer: 0
   m_Name: Brick (5)
   m_TagString: Untagged
@@ -399,8 +369,6 @@ GameObject:
   - component: {fileID: 23404192552131416}
   - component: {fileID: 65397460074728400}
   - component: {fileID: 114919319533673366}
-  - component: {fileID: 114790570678424638}
-  - component: {fileID: 114063238435140542}
   m_Layer: 0
   m_Name: Brick (3)
   m_TagString: Untagged
@@ -420,8 +388,6 @@ GameObject:
   - component: {fileID: 23764185579579768}
   - component: {fileID: 65332251987214542}
   - component: {fileID: 114443771260724986}
-  - component: {fileID: 114117669043494544}
-  - component: {fileID: 114166737014309406}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -441,8 +407,6 @@ GameObject:
   - component: {fileID: 23953079943673680}
   - component: {fileID: 65808362715922962}
   - component: {fileID: 114289889377202262}
-  - component: {fileID: 114948092263828608}
-  - component: {fileID: 114313789879261480}
   m_Layer: 0
   m_Name: Brick (4)
   m_TagString: Untagged
@@ -462,8 +426,6 @@ GameObject:
   - component: {fileID: 23549973764809398}
   - component: {fileID: 65289974334884372}
   - component: {fileID: 114598928507363524}
-  - component: {fileID: 114584074326774488}
-  - component: {fileID: 114260213408880196}
   m_Layer: 0
   m_Name: Brick (5)
   m_TagString: Untagged
@@ -498,31 +460,8 @@ GameObject:
   - component: {fileID: 23198024306020312}
   - component: {fileID: 65701269894386566}
   - component: {fileID: 114086087167972022}
-  - component: {fileID: 114385765344537742}
-  - component: {fileID: 114597628038721878}
   m_Layer: 0
   m_Name: Brick (5)
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!1 &1598215061467136
-GameObject:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 4847667589801282}
-  - component: {fileID: 33925880714037592}
-  - component: {fileID: 23541329480839008}
-  - component: {fileID: 65690837917094334}
-  - component: {fileID: 114263630062431586}
-  - component: {fileID: 114920718911703760}
-  - component: {fileID: 114243760868454888}
-  m_Layer: 0
-  m_Name: Brick
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -540,8 +479,6 @@ GameObject:
   - component: {fileID: 23148325781847816}
   - component: {fileID: 65886951643497884}
   - component: {fileID: 114580460225182858}
-  - component: {fileID: 114921763122123854}
-  - component: {fileID: 114674378043636160}
   m_Layer: 0
   m_Name: Brick (3)
   m_TagString: Untagged
@@ -561,8 +498,6 @@ GameObject:
   - component: {fileID: 23497661463111912}
   - component: {fileID: 65270231073799222}
   - component: {fileID: 114855422510159006}
-  - component: {fileID: 114247151334530350}
-  - component: {fileID: 114484254515214466}
   m_Layer: 0
   m_Name: Brick (6)
   m_TagString: Untagged
@@ -582,8 +517,6 @@ GameObject:
   - component: {fileID: 23702859563896150}
   - component: {fileID: 65713614711957612}
   - component: {fileID: 114994658612669238}
-  - component: {fileID: 114754082723034700}
-  - component: {fileID: 114627969944578544}
   m_Layer: 0
   m_Name: Brick (6)
   m_TagString: Untagged
@@ -603,8 +536,6 @@ GameObject:
   - component: {fileID: 23451740061169598}
   - component: {fileID: 65825879191763656}
   - component: {fileID: 114199357514426094}
-  - component: {fileID: 114274919537360784}
-  - component: {fileID: 114476154694769284}
   m_Layer: 0
   m_Name: Brick (5)
   m_TagString: Untagged
@@ -624,8 +555,6 @@ GameObject:
   - component: {fileID: 23003677460213968}
   - component: {fileID: 65955549950970948}
   - component: {fileID: 114343660613034822}
-  - component: {fileID: 114609737794458338}
-  - component: {fileID: 114478936042547346}
   m_Layer: 0
   m_Name: Brick (2)
   m_TagString: Untagged
@@ -660,8 +589,6 @@ GameObject:
   - component: {fileID: 23852466263687044}
   - component: {fileID: 65515101762609908}
   - component: {fileID: 114759593924109978}
-  - component: {fileID: 114532352919493864}
-  - component: {fileID: 114255088329587442}
   m_Layer: 0
   m_Name: Brick (6)
   m_TagString: Untagged
@@ -681,8 +608,6 @@ GameObject:
   - component: {fileID: 23232502642018482}
   - component: {fileID: 65693346398242404}
   - component: {fileID: 114014673594564890}
-  - component: {fileID: 114255248891964266}
-  - component: {fileID: 114306319652776600}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -702,8 +627,6 @@ GameObject:
   - component: {fileID: 23484984596778052}
   - component: {fileID: 65739177222558416}
   - component: {fileID: 114164149687493192}
-  - component: {fileID: 114160783102537368}
-  - component: {fileID: 114188944105248986}
   m_Layer: 0
   m_Name: Brick (1)
   m_TagString: Untagged
@@ -723,8 +646,6 @@ GameObject:
   - component: {fileID: 23122844092053260}
   - component: {fileID: 65404174064888296}
   - component: {fileID: 114667286201381688}
-  - component: {fileID: 114583144067186502}
-  - component: {fileID: 114431429792875692}
   m_Layer: 0
   m_Name: Brick (4)
   m_TagString: Untagged
@@ -744,8 +665,6 @@ GameObject:
   - component: {fileID: 23061644165564308}
   - component: {fileID: 65595063942974190}
   - component: {fileID: 114672889238415752}
-  - component: {fileID: 114701333090927162}
-  - component: {fileID: 114570231410079426}
   m_Layer: 0
   m_Name: Brick (2)
   m_TagString: Untagged
@@ -765,8 +684,25 @@ GameObject:
   - component: {fileID: 23135182803579226}
   - component: {fileID: 65075750638143030}
   - component: {fileID: 114700368480128118}
-  - component: {fileID: 114368517597505606}
-  - component: {fileID: 114100900675579250}
+  m_Layer: 0
+  m_Name: Brick
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!1 &1887867414201906
+GameObject:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4100307597443772}
+  - component: {fileID: 33732374086990140}
+  - component: {fileID: 23039121019379054}
+  - component: {fileID: 65484344815229804}
+  - component: {fileID: 114921880888898454}
   m_Layer: 0
   m_Name: Brick
   m_TagString: Untagged
@@ -786,8 +722,6 @@ GameObject:
   - component: {fileID: 23705841931444772}
   - component: {fileID: 65913728368664290}
   - component: {fileID: 114469476014058286}
-  - component: {fileID: 114550884824677526}
-  - component: {fileID: 114330058862379744}
   m_Layer: 0
   m_Name: Brick (1)
   m_TagString: Untagged
@@ -807,8 +741,6 @@ GameObject:
   - component: {fileID: 23826729408355140}
   - component: {fileID: 65481455106909770}
   - component: {fileID: 114239306738347984}
-  - component: {fileID: 114242624030491096}
-  - component: {fileID: 114300037188795690}
   m_Layer: 0
   m_Name: Brick (2)
   m_TagString: Untagged
@@ -828,8 +760,6 @@ GameObject:
   - component: {fileID: 23774689949090220}
   - component: {fileID: 65720132436642722}
   - component: {fileID: 114097943278257354}
-  - component: {fileID: 114456939490587904}
-  - component: {fileID: 114363069982383056}
   m_Layer: 0
   m_Name: Brick (3)
   m_TagString: Untagged
@@ -861,6 +791,19 @@ Transform:
   m_LocalScale: {x: 1, y: 0.3, z: 1}
   m_Children: []
   m_Father: {fileID: 4174378421553580}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!4 &4100307597443772
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887867414201906}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -3, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 0.3, z: 1}
+  m_Children: []
+  m_Father: {fileID: 4951024702469746}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4139037986102736
@@ -1312,19 +1255,6 @@ Transform:
   m_Father: {fileID: 4235366233117882}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!4 &4847667589801282
-Transform:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598215061467136}
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -3, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 0.3, z: 1}
-  m_Children: []
-  m_Father: {fileID: 4951024702469746}
-  m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &4917645148070678
 Transform:
   m_ObjectHideFlags: 1
@@ -1348,7 +1278,7 @@ Transform:
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
-  - {fileID: 4847667589801282}
+  - {fileID: 4100307597443772}
   - {fileID: 4502874013099144}
   - {fileID: 4365473934643358}
   - {fileID: 4346315846561108}
@@ -1451,6 +1381,41 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1109104024431598}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RenderingLayerMask: 4294967295
+  m_Materials:
+  - {fileID: 2100000, guid: 394fc3f3b2cac7a4f98c9334d30fa20c, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 0
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+--- !u!23 &23039121019379054
+MeshRenderer:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887867414201906}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2011,41 +1976,6 @@ MeshRenderer:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1615055925896292}
-  m_Enabled: 1
-  m_CastShadows: 1
-  m_ReceiveShadows: 1
-  m_DynamicOccludee: 1
-  m_MotionVectors: 1
-  m_LightProbeUsage: 1
-  m_ReflectionProbeUsage: 1
-  m_RenderingLayerMask: 4294967295
-  m_Materials:
-  - {fileID: 2100000, guid: 394fc3f3b2cac7a4f98c9334d30fa20c, type: 2}
-  m_StaticBatchInfo:
-    firstSubMesh: 0
-    subMeshCount: 0
-  m_StaticBatchRoot: {fileID: 0}
-  m_ProbeAnchor: {fileID: 0}
-  m_LightProbeVolumeOverride: {fileID: 0}
-  m_ScaleInLightmap: 1
-  m_PreserveUVs: 0
-  m_IgnoreNormalsForChartDetection: 0
-  m_ImportantGI: 0
-  m_StitchLightmapSeams: 0
-  m_SelectedEditorRenderState: 3
-  m_MinimumChartSize: 4
-  m_AutoUVMaxDistance: 0.5
-  m_AutoUVMaxAngle: 89
-  m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: 0
-  m_SortingLayer: 0
-  m_SortingOrder: 0
---- !u!23 &23541329480839008
-MeshRenderer:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598215061467136}
   m_Enabled: 1
   m_CastShadows: 1
   m_ReceiveShadows: 1
@@ -2803,6 +2733,13 @@ MeshFilter:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1502863234789926}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!33 &33732374086990140
+MeshFilter:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887867414201906}
+  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33740051270861282
 MeshFilter:
   m_ObjectHideFlags: 1
@@ -2858,13 +2795,6 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1826828303090674}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!33 &33925880714037592
-MeshFilter:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598215061467136}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
 --- !u!33 &33926351866026202
 MeshFilter:
@@ -3036,6 +2966,18 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!65 &65484344815229804
+BoxCollider:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1887867414201906}
+  m_Material: {fileID: 13400000, guid: e0988c546b045d0468cc12c9805af81c, type: 2}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!65 &65503586225342884
 BoxCollider:
   m_ObjectHideFlags: 1
@@ -3126,18 +3068,6 @@ BoxCollider:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1098738741135468}
-  m_Material: {fileID: 13400000, guid: e0988c546b045d0468cc12c9805af81c, type: 2}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &65690837917094334
-BoxCollider:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598215061467136}
   m_Material: {fileID: 13400000, guid: e0988c546b045d0468cc12c9805af81c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
@@ -3326,48 +3256,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114063238435140542
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1442972517326628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114068372333178144
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1161703658408208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114073056951376024
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3407,101 +3295,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114098009518543750
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1196751512648972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114100900675579250
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1884167823539370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114114613320566258
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1109104024431598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114117669043494544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1467763915275836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114155998296454954
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3515,38 +3308,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114160783102537368
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807743771935366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114164149687493192
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3560,80 +3321,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114166737014309406
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1467763915275836}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114188944105248986
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1807743771935366}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114190905517725904
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1081054538216446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114194171396992688
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3673,197 +3360,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114242624030491096
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1920488647288532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114243760868454888
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598215061467136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114247151334530350
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615055925896292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114255088329587442
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790777508292238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114255248891964266
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795994082700958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114255729081169962
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098738741135468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114260213408880196
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1502863234789926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114260861502563492
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3896,72 +3392,6 @@ MonoBehaviour:
     i15: 178
   m_ServerOnly: 0
   m_LocalPlayerAuthority: 0
---- !u!114 &114263630062431586
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598215061467136}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 232b780ef73676f478f354fda60408a9, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
-    type: 2}
---- !u!114 &114274919537360784
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1686364616400904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114278933691153124
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1286199528238896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114289889377202262
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -3975,90 +3405,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114300037188795690
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1920488647288532}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114306319652776600
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1795994082700958}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114313789879261480
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468732122734852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114330058862379744
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1902110678699266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114343660613034822
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4072,292 +3418,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114344194134713582
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248691725165172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114363069982383056
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1928021530909788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114368517597505606
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1884167823539370}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114385765344537742
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562473277943354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114390375982724204
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234912918015762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114394528575276868
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1190748594676290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114399973130131168
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1248691725165172}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114408704267906724
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072399888870884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114408967886908058
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1072399888870884}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114414651602924328
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1285727394633064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114431429792875692
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826828303090674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114443771260724986
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4371,91 +3431,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114445882183731696
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1081054538216446}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114456939490587904
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1928021530909788}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114468291478468856
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1196751512648972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114469476014058286
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4469,48 +3444,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114476154694769284
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1686364616400904}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114478936042547346
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1712150671664168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114483297434333516
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4524,112 +3457,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114484254515214466
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1615055925896292}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114532352919493864
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1790777508292238}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114550884824677526
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1902110678699266}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114570231410079426
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1853192248224918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114570877508095100
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4656,91 +3483,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114583144067186502
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1826828303090674}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114584074326774488
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1502863234789926}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114597628038721878
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1562473277943354}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114598928507363524
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4754,59 +3496,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114603371073839194
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062582806794344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114609737794458338
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1712150671664168}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114612699388934968
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -4820,187 +3509,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114614817761228044
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058634093433540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114618023958877782
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1161703658408208}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114622690451741752
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1062582806794344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114627969944578544
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1622771035176344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114635451750661884
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1213850282029218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114637098915031086
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1234912918015762}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114638634329666472
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5053,27 +3561,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114674378043636160
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1607906675360040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114681501716518396
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5087,38 +3574,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114685787038743634
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1285727394633064}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114700368480128118
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5132,59 +3587,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114701333090927162
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1853192248224918}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114718672420767210
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1190748594676290}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114727155774677716
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5224,59 +3626,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114733369126706662
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1281376017325536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114754082723034700
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1622771035176344}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114759593924109978
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5290,70 +3639,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114790570678424638
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1442972517326628}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114802514342256974
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1109104024431598}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114842395304164188
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5367,59 +3652,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114845455832013450
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1281376017325536}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114846090709694130
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1213850282029218}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
 --- !u!114 &114855422510159006
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5433,38 +3665,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114862623226139652
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1286199528238896}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
 --- !u!114 &114919319533673366
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -5478,144 +3678,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114920718911703760
+--- !u!114 &114921880888898454
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1598215061467136}
+  m_GameObject: {fileID: 1887867414201906}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 232b780ef73676f478f354fda60408a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114921763122123854
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1607906675360040}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114935808937594070
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1058634093433540}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114948092263828608
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1468732122734852}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 76
-    i1: 59
-    i2: 5
-    i3: 248
-    i4: 60
-    i5: 94
-    i6: 243
-    i7: 20
-    i8: 72
-    i9: 127
-    i10: 91
-    i11: 42
-    i12: 55
-    i13: 51
-    i14: 231
-    i15: 178
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114948308177163972
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1098738741135468}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
+    type: 2}
 --- !u!114 &114950111399482864
 MonoBehaviour:
   m_ObjectHideFlags: 1
