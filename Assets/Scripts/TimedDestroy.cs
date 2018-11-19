@@ -8,6 +8,6 @@ public class TimedDestroy : MonoBehaviour {
 
     // Use this for initialization
     void Start() {
-        Destroy(gameObject, destroyTime);
+        //Destroy(gameObject, destroyTime);
     }
 }

@@ -40,6 +40,7 @@ GameObject:
   - component: {fileID: 65058442449414148}
   - component: {fileID: 54336437328643356}
   - component: {fileID: 114816910203390394}
+  - component: {fileID: 114179173222668304}
   - component: {fileID: 114421580387381640}
   - component: {fileID: 114733295012176624}
   m_Layer: 0
@@ -145,6 +146,26 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
+--- !u!114 &114179173222668304
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1339064081321662}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072cdc54095d1a479a1a8ea260be7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lives1: 3
+  lives2: 3
+  nbBricks: 35
+  resetDelay: 1
+  bricks: {fileID: 1370965369752032, guid: 4c3b05f83c5ef314487f5b2a3733e7b2, type: 2}
+  spawnBricks: {fileID: 1009631145905354, guid: 5b3a72b5bed09e249b2bb2851d916d8d,
+    type: 2}
+  deathParticles: {fileID: 1338220747174972, guid: ada8f58e82b5b81438f0f5bdd1fe367c,
+    type: 2}
 --- !u!114 &114421580387381640
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -211,11 +232,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   paddleSpeed: 0.5
   ball: {fileID: 1667907487900972, guid: fbc77a11a02310d4d87c11263575c7f2, type: 2}
-  spawnBall: {fileID: 1267083683467628}
-  bricks: {fileID: 1370965369752032, guid: 4c3b05f83c5ef314487f5b2a3733e7b2, type: 2}
-  spawnBricks: {fileID: 1009631145905354, guid: 5b3a72b5bed09e249b2bb2851d916d8d,
-    type: 2}
+  spawnBall: {fileID: 0}
+  cloneBall: {fileID: 0}
   isSpawnHaut: 0
+  isReady: 0
+  allReady: 0
+  ballInPlay: 0
 --- !u!114 &114893793700086898
 MonoBehaviour:
   m_ObjectHideFlags: 1

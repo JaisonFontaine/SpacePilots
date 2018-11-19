@@ -7,62 +7,94 @@ public class PlayerController : NetworkBehaviour {
 
     public float paddleSpeed = 1f;
     public GameObject ball;
+
     public GameObject spawnBall;
-    public GameObject bricks;
-    public GameObject spawnBricks;
-    public bool isSpawnHaut = false;
+    public GameObject cloneBall;
+
+    [SyncVar] public bool isSpawnHaut = false;
+
+    [SyncVar] public bool isReady = false;
+    [SyncVar] public bool allReady = false;
+    [SyncVar] public bool ballInPlay = false;
 
     private Vector3 playerPos;
     private float xPos;
-    private bool ballExist = false;
 
-    void Start()
-    {
-        if (!GameObject.FindWithTag("Bricks")) {
-            GameObject Bricks = Instantiate(bricks, spawnBricks.transform.position, Quaternion.identity) as GameObject;
-            NetworkServer.Spawn(Bricks);
-        }
+    private PlayerController[] listPlayers;
+ 
+    private Rigidbody rbBall;
+    private Ball scriptBall;
+
+    void Start() {
+        spawnBall = transform.Find("SpawnBall").gameObject;
     }
 
     void Update() {
-        if (isLocalPlayer) {
-#if (UNITY_EDITOR || UNITY_STANDALONE)
-            if (isSpawnHaut)
-            {
-                xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
-            } else {
-                xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
-            }
-            
-            playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
-            transform.position = playerPos;
-
-            if(Input.GetKey(KeyCode.Space) && ballExist == false){
-                CmdSpawnBall();
-            }
-#else
-            Touch touch = Input.GetTouch(0);
-
-            if (Input.touchCount == 1)
-            {
-                if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
-                {
-                    Vector3 touchedPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
-                    xPos = transform.position.x + (touchedPos.x * paddleSpeed);
-                    playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
-                    transform.position = playerPos;
-                }
-            }
-#endif
+        if (!isLocalPlayer) {
+            return;
         }
+
+#if (UNITY_EDITOR || UNITY_STANDALONE)
+        if (isSpawnHaut) {
+            xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
+        } else {
+            xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
+        }
+            
+        playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
+        transform.position = playerPos;
+
+        listPlayers = FindObjectsOfType<PlayerController>();
+
+        if (listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
+            allReady = true;
+        }
+
+        if(Input.GetKey(KeyCode.Space) && isReady == false){
+            CmdSpawnBall();
+        }
+
+        if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
+            CmdShootBall();
+        }
+#else
+        Touch touch = Input.GetTouch(0);
+
+        if (Input.touchCount == 1)
+        {
+            if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+            {
+                Vector3 touchedPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
+                xPos = transform.position.x + (touchedPos.x * paddleSpeed);
+                playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
+                transform.position = playerPos;
+            }
+        }
+
+        if (Input.touchCount == 2 && ballInPlay == false)
+        {
+            CmdShootBall();
+        }
+#endif
     }
 
     [Command]
-    void CmdSpawnBall() {
-        GameObject Ball = Instantiate(ball, spawnBall.transform.position, Quaternion.identity) as GameObject;
-        Ball.transform.SetParent(transform);
-        ballExist = true;
-        NetworkServer.Spawn(Ball);
+    public void CmdSpawnBall() {
+        isReady = true;
+        ballInPlay = false;
+        cloneBall = Instantiate(ball, spawnBall.transform.position, Quaternion.identity) as GameObject;
+        cloneBall.transform.SetParent(transform);
+        NetworkServer.Spawn(cloneBall);
+    }
+
+    [Command]
+    void CmdShootBall() {
+        ballInPlay = true;
+        cloneBall.transform.parent = null;
+        rbBall = cloneBall.GetComponent<Rigidbody>();
+        scriptBall = cloneBall.GetComponent<Ball>();
+        rbBall.isKinematic = false;
+        rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
     }
 
     public override void OnStartLocalPlayer()
