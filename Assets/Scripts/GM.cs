@@ -28,6 +28,14 @@ public class GM : NetworkBehaviour {
         scriptPlayerController = GetComponent<PlayerController>();
     }
 
+    void Update()
+    {
+        if (!isLocalPlayer)
+        {
+            return;
+        }
+    }
+
     public void Setup()
     {
         /*clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;

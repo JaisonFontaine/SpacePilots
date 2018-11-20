@@ -25,8 +25,28 @@ public class PlayerController : NetworkBehaviour {
     private Rigidbody rbBall;
     private Ball scriptBall;
 
-    void Start() {
+    void Awake() {
         spawnBall = transform.Find("SpawnBall").gameObject;
+
+        if (transform.position.y == GameObject.Find("SpawnBas").transform.position.y) {
+            //Player Bas
+            Debug.Log("Player Bas");
+            isSpawnHaut = false;
+        }
+
+        if (transform.position.y == GameObject.Find("SpawnHaut").transform.position.y) {
+            //Player Haut
+            Debug.Log("Player Haut");
+            isSpawnHaut = true;
+        }
+    }
+
+    void FixedUpdate() {
+        listPlayers = FindObjectsOfType<PlayerController>();
+
+        if (listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
+            allReady = true;
+        }
     }
 
     void Update() {
@@ -43,12 +63,6 @@ public class PlayerController : NetworkBehaviour {
             
         playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
         transform.position = playerPos;
-
-        listPlayers = FindObjectsOfType<PlayerController>();
-
-        if (listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
-            allReady = true;
-        }
 
         if(Input.GetKey(KeyCode.Space) && isReady == false){
             CmdSpawnBall();
@@ -97,23 +111,16 @@ public class PlayerController : NetworkBehaviour {
         rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
     }
 
-    public override void OnStartLocalPlayer()
-    {
+    public override void OnStartLocalPlayer() {
         GetComponent<MeshRenderer>().material.color = Color.blue;
 
-        if (transform.position.y == GameObject.Find("SpawnBas").transform.position.y)
-        {
+        if (!isSpawnHaut) {
             //Player Bas
-            Debug.Log("Player Bas");
-            isSpawnHaut = false;
             Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (transform.position.y == GameObject.Find("SpawnHaut").transform.position.y)
-        {
-            //Player Bas
-            Debug.Log("Player Haut");
-            isSpawnHaut = true;
+        if (isSpawnHaut) {
+            //Player Haut
             Camera.main.transform.rotation = Quaternion.Euler(0, 0, 180);
         }
     }
