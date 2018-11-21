@@ -14,6 +14,7 @@ public class GM : NetworkBehaviour {
 
     public GameObject bricks;
     public GameObject spawnBricks;
+    public GameObject[] listBricks;
 
     public GameObject deathParticles;
 
@@ -23,6 +24,14 @@ public class GM : NetworkBehaviour {
         if (!GameObject.FindWithTag("Bricks")) {
             GameObject cloneBricks = Instantiate(bricks, spawnBricks.transform.position, Quaternion.identity) as GameObject;
             NetworkServer.Spawn(cloneBricks);
+
+            Transform[] spawnPoints = spawnBricks.GetComponentsInChildren<Transform>();
+
+            foreach (Transform spawnPoint in spawnPoints) {
+                GameObject cloneBrick = Instantiate(listBricks[Random.Range(0, listBricks.Length)], spawnPoint.position, Quaternion.identity) as GameObject;
+                cloneBrick.transform.SetParent(cloneBricks.transform);
+                NetworkServer.Spawn(cloneBrick);
+            }
         }
 
         scriptPlayerController = GetComponent<PlayerController>();

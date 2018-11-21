@@ -164,6 +164,10 @@ MonoBehaviour:
   bricks: {fileID: 1370965369752032, guid: 4c3b05f83c5ef314487f5b2a3733e7b2, type: 2}
   spawnBricks: {fileID: 1009631145905354, guid: 5b3a72b5bed09e249b2bb2851d916d8d,
     type: 2}
+  listBricks:
+  - {fileID: 1242235970455102, guid: 78a1b538697083344bbaf5244e0918b7, type: 2}
+  - {fileID: 1314578232565610, guid: b0652b01d83b7b440914c5f0144695c8, type: 2}
+  - {fileID: 1461865499427980, guid: c5ccbe8ed22714645b7c94ff6ce6deb1, type: 2}
   deathParticles: {fileID: 1338220747174972, guid: ada8f58e82b5b81438f0f5bdd1fe367c,
     type: 2}
 --- !u!114 &114421580387381640
