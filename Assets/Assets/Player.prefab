@@ -92,7 +92,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: d661ca20899e0554b99db47c76857379, type: 2}
+  - {fileID: 2100000, guid: 6eeb7009ecd02bd4c900f28d807a8c47, type: 3}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -118,7 +118,7 @@ MeshFilter:
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339064081321662}
-  m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+  m_Mesh: {fileID: 4300000, guid: 6eeb7009ecd02bd4c900f28d807a8c47, type: 3}
 --- !u!54 &54336437328643356
 Rigidbody:
   m_ObjectHideFlags: 1
