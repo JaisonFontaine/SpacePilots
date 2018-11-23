@@ -37,7 +37,7 @@ GameObject:
   - component: {fileID: 4061837311308058}
   - component: {fileID: 33870520209236870}
   - component: {fileID: 23688515846933372}
-  - component: {fileID: 65058442449414148}
+  - component: {fileID: 64341182162675436}
   - component: {fileID: 54336437328643356}
   - component: {fileID: 114816910203390394}
   - component: {fileID: 114179173222668304}
@@ -57,7 +57,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1339064081321662}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -4.5, z: 0}
+  m_LocalPosition: {x: 0, y: -4.85, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 4784801502748454}
@@ -71,7 +71,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1267083683467628}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0.651, z: 0}
+  m_LocalPosition: {x: 0, y: 0.265, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 4061837311308058}
@@ -92,7 +92,7 @@ MeshRenderer:
   m_ReflectionProbeUsage: 1
   m_RenderingLayerMask: 4294967295
   m_Materials:
-  - {fileID: 2100000, guid: 6eeb7009ecd02bd4c900f28d807a8c47, type: 3}
+  - {fileID: 2100000, guid: d661ca20899e0554b99db47c76857379, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -134,8 +134,8 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!65 &65058442449414148
-BoxCollider:
+--- !u!64 &64341182162675436
+MeshCollider:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInternal: {fileID: 100100000}
@@ -143,9 +143,11 @@ BoxCollider:
   m_Material: {fileID: 13400000, guid: e0988c546b045d0468cc12c9805af81c, type: 2}
   m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  serializedVersion: 3
+  m_Convex: 0
+  m_CookingOptions: 14
+  m_SkinWidth: 0.01
+  m_Mesh: {fileID: 4300000, guid: 6eeb7009ecd02bd4c900f28d807a8c47, type: 3}
 --- !u!114 &114179173222668304
 MonoBehaviour:
   m_ObjectHideFlags: 1
