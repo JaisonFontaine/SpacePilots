@@ -5,17 +5,13 @@ using UnityEngine.Networking;
 
 public class DeadZoneDown : NetworkBehaviour {
 
-    private PlayerController[] listPlayers;
+    private GM scriptGM;
 
-    void Update() {
-        listPlayers = FindObjectsOfType<PlayerController>();
+    void Start() {
+        scriptGM = FindObjectOfType<GM>();
     }
 
     void OnTriggerEnter(Collider col) {
-        foreach (PlayerController player in listPlayers) {
-            if (!player.isSpawnHaut) {
-                player.GetComponent<GM>().CmdLoseLife1();
-            }
-        }
+        scriptGM.CmdLoseLife1();
     }
 }

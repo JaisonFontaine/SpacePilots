@@ -7,8 +7,8 @@ using UnityEngine.Networking;
 
 public class GM : NetworkBehaviour {
 
-    [SyncVar] public int lives1 = 3;
-    [SyncVar] public int lives2 = 3;
+    [SyncVar] public int livesPlayer1 = 3;
+    [SyncVar] public int livesPlayer2 = 3;
     [SyncVar] public int nbBricks = 20;
     public float resetDelay = 1f;
 
@@ -18,7 +18,7 @@ public class GM : NetworkBehaviour {
 
     public GameObject deathParticles;
 
-    private PlayerController scriptPlayerController;
+    public PlayerController[] listPlayer;
 
     void Start() {
         if (!GameObject.FindWithTag("Bricks")) {
@@ -29,60 +29,60 @@ public class GM : NetworkBehaviour {
 
             foreach (Transform spawnPoint in spawnPoints) {
                 GameObject cloneBrick = Instantiate(listBricks[Random.Range(0, listBricks.Length)], spawnPoint.position, Quaternion.identity) as GameObject;
-                cloneBrick.transform.SetParent(cloneBricks.transform);
                 NetworkServer.Spawn(cloneBrick);
+                cloneBrick.transform.SetParent(cloneBricks.transform);
             }
         }
-
-        scriptPlayerController = GetComponent<PlayerController>();
     }
 
-    void Update()
-    {
-        if (!isLocalPlayer)
-        {
-            return;
-        }
+    void FixedUpdate() {
+        listPlayer = FindObjectsOfType<PlayerController>();
     }
 
-    public void Setup()
-    {
+    public void Setup() {
         /*clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
         Instantiate(bricksPrefab, transform.position, Quaternion.identity);*/
     }
 
-    void Reset()
-    {
+    void Reset() {
         /*Time.timeScale = 1f;
         SceneManager.LoadScene(0);*/
     }
 
     [Command]
     public void CmdLoseLife1() {
-        lives1--;
-        RpcMajLife1();
+        livesPlayer1--;
+        RpcMajLife1(livesPlayer1);
+
+        foreach (PlayerController player in listPlayer) {
+            if (!player.isSpawnHaut) {
+                Destroy(player.cloneBall);
+                player.CmdSpawnBall();
+            }
+        }
 
         //Instantiate(deathParticles, transform.position, Quaternion.identity);
-        //Destroy(scriptPlayerController.cloneBall);
-
-        //scriptPlayerController.CmdSpawnBall();
-
         //Invoke("SetupPaddle", resetDelay);
-        //CmdCheckGameOver1();
+       
+        CmdCheckGameOver1();
     }
 
     [Command]
     public void CmdLoseLife2() {
-        lives2--;
-        RpcMajLife2();
+        livesPlayer2--;
+        RpcMajLife2(livesPlayer2);
+
+        foreach (PlayerController player in listPlayer) {
+            if (player.isSpawnHaut) {
+                Destroy(player.cloneBall);
+                player.CmdSpawnBall();
+            }
+        }
 
         //Instantiate(deathParticles, transform.position, Quaternion.identity);
-        //Destroy(scriptPlayerController.cloneBall);
-
-        //scriptPlayerController.CmdSpawnBall();
-
         //Invoke("SetupPaddle", resetDelay);
-        //CmdCheckGameOver2();
+
+        CmdCheckGameOver2();
     }
 
     [Command]
@@ -94,18 +94,18 @@ public class GM : NetworkBehaviour {
             Invoke("Reset", resetDelay);
         }*/
 
-        if (lives1 < 1) {
-            lives1 = 0;
+        if (livesPlayer1 < 1) {
+            livesPlayer1 = 0;
             GameObject.Find("GameOver").SetActive(true);
             //gameOver.SetActive(true);
             Time.timeScale = .25f;
             //Invoke("Reset", resetDelay);
         }
 
-        if (lives2 < 1) {
-            lives2 = 0;
+        if (livesPlayer2 < 1) {
+            livesPlayer2 = 0;
             GameObject.Find("YouWon").SetActive(true);
-            //gameOver.SetActive(true);
+            //youWon.SetActive(true);
             Time.timeScale = .25f;
             //Invoke("Reset", resetDelay);
         }
@@ -120,18 +120,17 @@ public class GM : NetworkBehaviour {
             Invoke("Reset", resetDelay);
         }*/
 
-        if (lives1 < 1)
+        if (livesPlayer1 < 1)
         {
-            lives1 = 0;
+            livesPlayer1 = 0;
             GameObject.Find("YouWon").SetActive(true);
-            //gameOver.SetActive(true);
+            //youWon.SetActive(true);
             Time.timeScale = .25f;
             //Invoke("Reset", resetDelay);
         }
 
-        if (lives2 < 1)
-        {
-            lives2 = 0;
+        if (livesPlayer2 < 1) {
+            livesPlayer2 = 0;
             GameObject.Find("GameOver").SetActive(true);
             //gameOver.SetActive(true);
             Time.timeScale = .25f;
@@ -140,15 +139,13 @@ public class GM : NetworkBehaviour {
     }
 
     [ClientRpc]
-    public void RpcMajLife1()
-    {
-        GameObject.Find("LivesPlayer1").GetComponent<Text>().text = "Lives Player 1 : " + lives1;
+    public void RpcMajLife1(int live1) {
+        GameObject.Find("LivesPlayer1").GetComponent<Text>().text = "Lives Player 1 : " + live1;
     }
 
     [ClientRpc]
-    public void RpcMajLife2()
-    {
-        GameObject.Find("LivesPlayer2").GetComponent<Text>().text = "Lives Player 2 : " + lives2;
+    public void RpcMajLife2(int live2) {
+        GameObject.Find("LivesPlayer2").GetComponent<Text>().text = "Lives Player 2 : " + live2;
     }
 
     void SetupPaddle()
@@ -156,9 +153,8 @@ public class GM : NetworkBehaviour {
         //clonePaddle = Instantiate(paddle, transform.position, Quaternion.identity) as GameObject;
     }
 
-    public void DestroyBrick()
-    {
-        /*nbBricks--;
-        CheckGameOver();*/
+    [Command]
+    public void CmdDestroyBrick() {
+        nbBricks--;
     }
 }

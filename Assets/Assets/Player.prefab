@@ -40,7 +40,6 @@ GameObject:
   - component: {fileID: 64341182162675436}
   - component: {fileID: 54336437328643356}
   - component: {fileID: 114816910203390394}
-  - component: {fileID: 114179173222668304}
   - component: {fileID: 114421580387381640}
   - component: {fileID: 114733295012176624}
   m_Layer: 0
@@ -148,30 +147,6 @@ MeshCollider:
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 6eeb7009ecd02bd4c900f28d807a8c47, type: 3}
---- !u!114 &114179173222668304
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1339064081321662}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a072cdc54095d1a479a1a8ea260be7a4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lives1: 3
-  lives2: 3
-  nbBricks: 35
-  resetDelay: 1
-  bricks: {fileID: 1370965369752032, guid: 4c3b05f83c5ef314487f5b2a3733e7b2, type: 2}
-  spawnBricks: {fileID: 1009631145905354, guid: 5b3a72b5bed09e249b2bb2851d916d8d,
-    type: 2}
-  listBricks:
-  - {fileID: 1242235970455102, guid: 78a1b538697083344bbaf5244e0918b7, type: 2}
-  - {fileID: 1314578232565610, guid: b0652b01d83b7b440914c5f0144695c8, type: 2}
-  - {fileID: 1461865499427980, guid: c5ccbe8ed22714645b7c94ff6ce6deb1, type: 2}
-  deathParticles: {fileID: 1338220747174972, guid: ada8f58e82b5b81438f0f5bdd1fe367c,
-    type: 2}
 --- !u!114 &114421580387381640
 MonoBehaviour:
   m_ObjectHideFlags: 1

@@ -97,8 +97,8 @@ public class PlayerController : NetworkBehaviour {
         isReady = true;
         ballInPlay = false;
         cloneBall = Instantiate(ball, spawnBall.transform.position, Quaternion.identity) as GameObject;
-        cloneBall.transform.SetParent(transform);
         NetworkServer.Spawn(cloneBall);
+        cloneBall.transform.SetParent(transform);
     }
 
     [Command]

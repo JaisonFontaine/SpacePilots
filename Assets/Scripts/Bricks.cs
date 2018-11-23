@@ -7,10 +7,15 @@ public class Bricks : NetworkBehaviour {
 
     public GameObject brickParticle;
 
-    void OnCollisionEnter(Collision other)
-    {
-        /*Instantiate(brickParticle, transform.position, Quaternion.identity);
-        GM.instance.DestroyBrick();
-        Destroy(gameObject);*/
+    private GM scriptGM;
+
+    void Start() {
+        scriptGM = FindObjectOfType<GM>();
+    }
+
+    void OnCollisionEnter(Collision other) {
+        //Instantiate(brickParticle, transform.position, Quaternion.identity);
+        scriptGM.CmdDestroyBrick();
+        Destroy(gameObject);
     }
 }

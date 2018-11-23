@@ -1,0 +1,99 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1001 &100100000
+Prefab:
+  m_ObjectHideFlags: 1
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications: []
+    m_RemovedComponents: []
+  m_SourcePrefab: {fileID: 0}
+  m_RootGameObject: {fileID: 1110617709964400}
+  m_IsPrefabAsset: 1
+--- !u!1 &1110617709964400
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 4265151895854274}
+  - component: {fileID: 114335128247790038}
+  - component: {fileID: 114402085371699156}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &4265151895854274
+Transform:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110617709964400}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0.86007994, y: -0.7874115, z: -9.177734}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114335128247790038
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110617709964400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_SceneId:
+    m_Value: 0
+  m_AssetId:
+    i0: 36
+    i1: 92
+    i2: 20
+    i3: 34
+    i4: 42
+    i5: 181
+    i6: 23
+    i7: 68
+    i8: 217
+    i9: 72
+    i10: 111
+    i11: 59
+    i12: 248
+    i13: 18
+    i14: 24
+    i15: 121
+  m_ServerOnly: 0
+  m_LocalPlayerAuthority: 0
+--- !u!114 &114402085371699156
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1110617709964400}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a072cdc54095d1a479a1a8ea260be7a4, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  livesPlayer1: 3
+  livesPlayer2: 3
+  nbBricks: 35
+  resetDelay: 1
+  bricks: {fileID: 1370965369752032, guid: 4c3b05f83c5ef314487f5b2a3733e7b2, type: 2}
+  spawnBricks: {fileID: 1009631145905354, guid: 5b3a72b5bed09e249b2bb2851d916d8d,
+    type: 2}
+  listBricks:
+  - {fileID: 1242235970455102, guid: 78a1b538697083344bbaf5244e0918b7, type: 2}
+  - {fileID: 1314578232565610, guid: b0652b01d83b7b440914c5f0144695c8, type: 2}
+  - {fileID: 1461865499427980, guid: c5ccbe8ed22714645b7c94ff6ce6deb1, type: 2}
+  deathParticles: {fileID: 1338220747174972, guid: ada8f58e82b5b81438f0f5bdd1fe367c,
+    type: 2}
