@@ -11,7 +11,7 @@ public class PlayerController : NetworkBehaviour {
     public GameObject spawnBall;
     public GameObject cloneBall;
 
-    [SyncVar] public bool isSpawnHaut = false;
+    [SyncVar] public bool isSpawnUp = false;
 
     [SyncVar] public bool isReady = false;
     [SyncVar] public bool allReady = false;
@@ -31,13 +31,13 @@ public class PlayerController : NetworkBehaviour {
         if (transform.position.y == GameObject.Find("SpawnBas").transform.position.y) {
             //Player Bas
             Debug.Log("Player Bas");
-            isSpawnHaut = false;
+            isSpawnUp = false;
         }
 
         if (transform.position.y == GameObject.Find("SpawnHaut").transform.position.y) {
             //Player Haut
             Debug.Log("Player Haut");
-            isSpawnHaut = true;
+            isSpawnUp = true;
         }
     }
 
@@ -55,7 +55,7 @@ public class PlayerController : NetworkBehaviour {
         }
 
 #if (UNITY_EDITOR || UNITY_STANDALONE)
-        if (isSpawnHaut) {
+        if (isSpawnUp) {
             xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
         } else {
             xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
@@ -99,6 +99,13 @@ public class PlayerController : NetworkBehaviour {
         cloneBall = Instantiate(ball, spawnBall.transform.position, Quaternion.identity) as GameObject;
         NetworkServer.Spawn(cloneBall);
         cloneBall.transform.SetParent(transform);
+        scriptBall = cloneBall.GetComponent<Ball>();
+
+        if (isSpawnUp) {
+            scriptBall.playerUp = true;
+        } else {
+            scriptBall.playerUp = false;
+        }
     }
 
     [Command]
@@ -106,7 +113,6 @@ public class PlayerController : NetworkBehaviour {
         ballInPlay = true;
         cloneBall.transform.parent = null;
         rbBall = cloneBall.GetComponent<Rigidbody>();
-        scriptBall = cloneBall.GetComponent<Ball>();
         rbBall.isKinematic = false;
         rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
     }
@@ -114,12 +120,12 @@ public class PlayerController : NetworkBehaviour {
     public override void OnStartLocalPlayer() {
         GetComponent<MeshRenderer>().material.color = Color.blue;
 
-        if (!isSpawnHaut) {
+        if (!isSpawnUp) {
             //Player Bas
             Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (isSpawnHaut) {
+        if (isSpawnUp) {
             //Player Haut
             Camera.main.transform.rotation = Quaternion.Euler(0, 0, 180);
         }

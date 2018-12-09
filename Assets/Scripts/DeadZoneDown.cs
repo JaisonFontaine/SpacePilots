@@ -12,6 +12,6 @@ public class DeadZoneDown : NetworkBehaviour {
     }
 
     void OnTriggerEnter(Collider col) {
-        scriptGM.CmdLoseLife1();
+        scriptGM.CmdLoseLife1(col.GetComponent<Ball>().playerUp);
     }
 }

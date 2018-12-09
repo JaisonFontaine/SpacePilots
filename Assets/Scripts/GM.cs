@@ -50,12 +50,17 @@ public class GM : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdLoseLife1() {
+    public void CmdLoseLife1(bool playerUp) {
         livesPlayer1--;
         RpcMajLife1(livesPlayer1);
 
         foreach (PlayerController player in listPlayer) {
-            if (!player.isSpawnHaut) {
+            if (!player.isSpawnUp && !playerUp) {
+                Destroy(player.cloneBall);
+                player.CmdSpawnBall();
+            }
+
+            if (player.isSpawnUp && playerUp) {
                 Destroy(player.cloneBall);
                 player.CmdSpawnBall();
             }
@@ -68,12 +73,17 @@ public class GM : NetworkBehaviour {
     }
 
     [Command]
-    public void CmdLoseLife2() {
+    public void CmdLoseLife2(bool playerUp) {
         livesPlayer2--;
         RpcMajLife2(livesPlayer2);
 
         foreach (PlayerController player in listPlayer) {
-            if (player.isSpawnHaut) {
+            if (player.isSpawnUp && playerUp) {
+                Destroy(player.cloneBall);
+                player.CmdSpawnBall();
+            }
+
+            if (!player.isSpawnUp && !playerUp) {
                 Destroy(player.cloneBall);
                 player.CmdSpawnBall();
             }
