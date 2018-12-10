@@ -21,22 +21,25 @@ public class GM : NetworkBehaviour {
     public PlayerController[] listPlayer;
 
     void Start() {
-        if (!GameObject.FindWithTag("Bricks")) {
+        
+    }
+
+    void FixedUpdate() {
+        listPlayer = FindObjectsOfType<PlayerController>();
+
+        if (!GameObject.FindWithTag("Bricks") && listPlayer.Length == 2) {
             GameObject cloneBricks = Instantiate(bricks, spawnBricks.transform.position, Quaternion.identity) as GameObject;
             NetworkServer.Spawn(cloneBricks);
 
             Transform[] spawnPoints = spawnBricks.GetComponentsInChildren<Transform>();
 
-            foreach (Transform spawnPoint in spawnPoints) {
+            foreach (Transform spawnPoint in spawnPoints)
+            {
                 GameObject cloneBrick = Instantiate(listBricks[Random.Range(0, listBricks.Length)], spawnPoint.position, Quaternion.identity) as GameObject;
                 NetworkServer.Spawn(cloneBrick);
                 cloneBrick.transform.SetParent(cloneBricks.transform);
             }
         }
-    }
-
-    void FixedUpdate() {
-        listPlayer = FindObjectsOfType<PlayerController>();
     }
 
     public void Setup() {

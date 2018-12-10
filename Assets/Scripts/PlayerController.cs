@@ -44,7 +44,7 @@ public class PlayerController : NetworkBehaviour {
     void FixedUpdate() {
         listPlayers = FindObjectsOfType<PlayerController>();
 
-        if (listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
+        if (listPlayers.Length == 2 && listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
             allReady = true;
         }
     }
@@ -64,7 +64,7 @@ public class PlayerController : NetworkBehaviour {
         playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
         transform.position = playerPos;
 
-        if(Input.GetKey(KeyCode.Space) && isReady == false){
+        if(Input.GetKey(KeyCode.Space) && isReady == false && listPlayers.Length == 2) {
             CmdSpawnBall();
         }
 
