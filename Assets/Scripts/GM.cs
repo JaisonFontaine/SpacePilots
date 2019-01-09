@@ -18,16 +18,16 @@ public class GM : NetworkBehaviour {
 
     public GameObject deathParticles;
 
-    public PlayerController[] listPlayer;
+    //public PlayerController[] listPlayer;
 
     void Start() {
         
     }
 
     void FixedUpdate() {
-        listPlayer = FindObjectsOfType<PlayerController>();
+        //listPlayer = FindObjectsOfType<PlayerController>();
 
-        if (!GameObject.FindWithTag("Bricks") && listPlayer.Length == 2) {
+        /*if (!GameObject.FindWithTag("Bricks") && listPlayer.Length == 2) {
             GameObject cloneBricks = Instantiate(bricks, spawnBricks.transform.position, Quaternion.identity) as GameObject;
             NetworkServer.Spawn(cloneBricks);
 
@@ -39,7 +39,7 @@ public class GM : NetworkBehaviour {
                 NetworkServer.Spawn(cloneBrick);
                 cloneBrick.transform.SetParent(cloneBricks.transform);
             }
-        }
+        }*/
     }
 
     public void Setup() {
@@ -57,7 +57,7 @@ public class GM : NetworkBehaviour {
         livesPlayer1--;
         RpcMajLife1(livesPlayer1);
 
-        foreach (PlayerController player in listPlayer) {
+        /*foreach (PlayerController player in listPlayer) {
             if (!player.isSpawnUp && !playerUp) {
                 Destroy(player.cloneBall);
                 player.CmdSpawnBall();
@@ -67,7 +67,7 @@ public class GM : NetworkBehaviour {
                 Destroy(player.cloneBall);
                 player.CmdSpawnBall();
             }
-        }
+        }*/
 
         //Instantiate(deathParticles, transform.position, Quaternion.identity);
         //Invoke("SetupPaddle", resetDelay);
@@ -80,7 +80,7 @@ public class GM : NetworkBehaviour {
         livesPlayer2--;
         RpcMajLife2(livesPlayer2);
 
-        foreach (PlayerController player in listPlayer) {
+        /*foreach (PlayerController player in listPlayer) {
             if (player.isSpawnUp && playerUp) {
                 Destroy(player.cloneBall);
                 player.CmdSpawnBall();
@@ -90,7 +90,7 @@ public class GM : NetworkBehaviour {
                 Destroy(player.cloneBall);
                 player.CmdSpawnBall();
             }
-        }
+        }*/
 
         //Instantiate(deathParticles, transform.position, Quaternion.identity);
         //Invoke("SetupPaddle", resetDelay);

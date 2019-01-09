@@ -1,133 +1,198 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using Photon.Pun;
 
-public class PlayerController : NetworkBehaviour {
+namespace Com.JaisonFontaine.SpacePilots {
+    public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable {
 
-    public float paddleSpeed = 1f;
-    public GameObject ball;
+        #region Private Fields
 
-    public GameObject spawnBall;
-    public GameObject cloneBall;
+        private Vector3 playerPos;
+        private float xPos;
 
-    [SyncVar] public bool isSpawnUp = false;
+        //private PlayerController[] listPlayers;
 
-    [SyncVar] public bool isReady = false;
-    [SyncVar] public bool allReady = false;
-    [SyncVar] public bool ballInPlay = false;
+        private Rigidbody rbBall;
+        //private Ball scriptBall;
 
-    private Vector3 playerPos;
-    private float xPos;
+        #endregion
 
-    private PlayerController[] listPlayers;
- 
-    private Rigidbody rbBall;
-    private Ball scriptBall;
 
-    void Awake() {
-        spawnBall = transform.Find("SpawnBall").gameObject;
+        #region Public Fields
 
-        if (transform.position.y == GameObject.Find("SpawnBas").transform.position.y) {
-            //Player Bas
-            Debug.Log("Player Bas");
-            isSpawnUp = false;
-        }
+        public float paddleSpeed = 1f;
+        [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
+        public static GameObject LocalPlayerInstance;
+        public GameObject ball;
 
-        if (transform.position.y == GameObject.Find("SpawnHaut").transform.position.y) {
-            //Player Haut
-            Debug.Log("Player Haut");
-            isSpawnUp = true;
-        }
-    }
+        public GameObject spawnBall;
+        public GameObject cloneBall;
 
-    void FixedUpdate() {
-        listPlayers = FindObjectsOfType<PlayerController>();
+        //[SyncVar] public bool isSpawnUp = false;
 
-        if (listPlayers.Length == 2 && listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
-            allReady = true;
-        }
-    }
+        public bool isReady = false;
+        //[SyncVar] public bool allReady = false;
 
-    void Update() {
-        if (!isLocalPlayer) {
-            return;
-        }
+        public bool ballInPlay = false;
 
-#if (UNITY_EDITOR || UNITY_STANDALONE)
-        if (isSpawnUp) {
-            xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
-        } else {
-            xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
-        }
-            
-        playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
-        transform.position = playerPos;
+        #endregion
 
-        if(Input.GetKey(KeyCode.Space) && isReady == false && listPlayers.Length == 2) {
-            CmdSpawnBall();
-        }
 
-        if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
-            CmdShootBall();
-        }
-#else
-        Touch touch = Input.GetTouch(0);
+        #region IPunObservable implementation
 
-        if (Input.touchCount == 1)
-        {
-            if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info) {
+            if (stream.IsWriting)
             {
-                Vector3 touchedPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
-                xPos = transform.position.x + (touchedPos.x * paddleSpeed);
-                playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
-                transform.position = playerPos;
+                // We own this player: send the others our data
+                stream.SendNext(ballInPlay);
+            }
+            else
+            {
+                // Network player, receive data
+                this.ballInPlay = (bool)stream.ReceiveNext();
             }
         }
 
-        if (Input.touchCount == 2 && ballInPlay == false)
-        {
-            CmdShootBall();
+
+        #endregion
+
+
+        #region MonoBehaviour CallBacks
+
+        void Awake() {
+            // #Important
+            // used in GameManager.cs: we keep track of the localPlayer instance to prevent instantiation when levels are synchronized
+            if (photonView.IsMine)
+            {
+                PlayerController.LocalPlayerInstance = this.gameObject;
+
+                GetComponent<MeshRenderer>().material.color = Color.blue;
+
+                if (PhotonNetwork.IsMasterClient) {
+                    //Player Bas
+                    Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
+                }
+                else {
+                    //Player Haut
+                    Camera.main.transform.rotation = Quaternion.Euler(0, 0, 180);
+                }
+            }
+            // #Critical
+            // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
+            DontDestroyOnLoad(this.gameObject);
+            spawnBall = transform.Find("SpawnBall").gameObject;
+
+            /*if (transform.position.y == GameObject.Find("SpawnBas").transform.position.y) {
+                //Player Bas
+                Debug.Log("Player Bas");
+                isSpawnUp = false;
+            }
+
+            if (transform.position.y == GameObject.Find("SpawnHaut").transform.position.y) {
+                //Player Haut
+                Debug.Log("Player Haut");
+                isSpawnUp = true;
+            }*/
         }
+
+        void FixedUpdate() {
+            /*listPlayers = FindObjectsOfType<PlayerController>();
+
+            if (listPlayers.Length == 2 && listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
+                allReady = true;
+            }*/
+        }
+
+        void Update() {
+            /*if (!isLocalPlayer) {
+                return;
+            }*/
+
+            if (!photonView.IsMine && PhotonNetwork.IsConnected) {
+                return;
+            }
+
+#if (UNITY_EDITOR || UNITY_STANDALONE)
+            if (PhotonNetwork.IsMasterClient) {
+                //Player Bas
+                xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
+            } else {
+                //Player Haut
+                xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
+            }
+
+            playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
+            transform.position = playerPos;
+
+            if(Input.GetKey(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                SpawnBall();
+            }
+
+            /*if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
+                CmdShootBall();
+            }*/
+#else
+            /*Touch touch = Input.GetTouch(0);
+
+            if (Input.touchCount == 1)
+            {
+                if (touch.phase == TouchPhase.Stationary || touch.phase == TouchPhase.Moved)
+                {
+                    Vector3 touchedPos = Camera.main.ScreenToWorldPoint(new Vector3(touch.position.x, touch.position.y, 10));
+                    xPos = transform.position.x + (touchedPos.x * paddleSpeed);
+                    playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
+                    transform.position = playerPos;
+                }
+            }
+
+            if (Input.touchCount == 2 && ballInPlay == false)
+            {
+                CmdShootBall();
+            }*/
 #endif
-    }
-
-    [Command]
-    public void CmdSpawnBall() {
-        isReady = true;
-        ballInPlay = false;
-        cloneBall = Instantiate(ball, spawnBall.transform.position, Quaternion.identity) as GameObject;
-        NetworkServer.Spawn(cloneBall);
-        cloneBall.transform.SetParent(transform);
-        scriptBall = cloneBall.GetComponent<Ball>();
-
-        if (isSpawnUp) {
-            scriptBall.playerUp = true;
-        } else {
-            scriptBall.playerUp = false;
-        }
-    }
-
-    [Command]
-    void CmdShootBall() {
-        ballInPlay = true;
-        cloneBall.transform.parent = null;
-        rbBall = cloneBall.GetComponent<Rigidbody>();
-        rbBall.isKinematic = false;
-        rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
-    }
-
-    public override void OnStartLocalPlayer() {
-        GetComponent<MeshRenderer>().material.color = Color.blue;
-
-        if (!isSpawnUp) {
-            //Player Bas
-            Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
         }
 
-        if (isSpawnUp) {
-            //Player Haut
-            Camera.main.transform.rotation = Quaternion.Euler(0, 0, 180);
+        #endregion
+
+
+        public void SpawnBall() {
+            isReady = true;
+            ballInPlay = false;
+
+            cloneBall =  PhotonNetwork.Instantiate(ball.name, spawnBall.transform.position, Quaternion.identity, 0);
+
+            cloneBall.transform.SetParent(transform);
+            /*scriptBall = cloneBall.GetComponent<Ball>();
+
+            if (isSpawnUp) {
+                scriptBall.playerUp = true;
+            } else {
+                scriptBall.playerUp = false;
+            }*/
         }
+
+        /*[Command]
+        void CmdShootBall() {
+            ballInPlay = true;
+            cloneBall.transform.parent = null;
+            rbBall = cloneBall.GetComponent<Rigidbody>();
+            rbBall.isKinematic = false;
+            rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
+        }
+
+        public override void OnStartLocalPlayer() {
+            GetComponent<MeshRenderer>().material.color = Color.blue;
+
+            if (!isSpawnUp) {
+                //Player Bas
+                Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
+            }
+
+            if (isSpawnUp) {
+                //Player Haut
+                Camera.main.transform.rotation = Quaternion.Euler(0, 0, 180);
+            }
+        }*/
     }
 }

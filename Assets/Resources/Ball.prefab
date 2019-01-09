@@ -23,10 +23,9 @@ GameObject:
   - component: {fileID: 23462504405436146}
   - component: {fileID: 135345823624005022}
   - component: {fileID: 54961480342515472}
-  - component: {fileID: 114525979643198268}
-  - component: {fileID: 114976544265390148}
-  - component: {fileID: 114511874214139784}
   - component: {fileID: 96337072701665096}
+  - component: {fileID: 114462968197598166}
+  - component: {fileID: 114928117960063102}
   m_Layer: 0
   m_Name: Ball
   m_TagString: Ball
@@ -206,7 +205,7 @@ TrailRenderer:
   m_MinVertexDistance: 0.1
   m_Autodestruct: 0
   m_Emitting: 1
---- !u!114 &114511874214139784
+--- !u!114 &114462968197598166
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -214,20 +213,20 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667907487900972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.05
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
---- !u!114 &114525979643198268
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114928117960063102}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
+--- !u!114 &114928117960063102
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -235,42 +234,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1667907487900972}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 89a4dab3935824b4b84c74863b04d359, type: 3}
+  m_Script: {fileID: 11500000, guid: 627855c7f81362d41938ffe0b1475957, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ballInitialVelocity: 200
---- !u!114 &114976544265390148
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1667907487900972}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 251
-    i1: 199
-    i2: 122
-    i3: 17
-    i4: 160
-    i5: 35
-    i6: 16
-    i7: 212
-    i8: 216
-    i9: 124
-    i10: 17
-    i11: 38
-    i12: 53
-    i13: 117
-    i14: 199
-    i15: 242
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  m_SynchronizePosition: 1
+  m_SynchronizeRotation: 1
+  m_SynchronizeScale: 0
 --- !u!135 &135345823624005022
 SphereCollider:
   m_ObjectHideFlags: 1
