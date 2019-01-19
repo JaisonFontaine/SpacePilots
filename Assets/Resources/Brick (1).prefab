@@ -23,8 +23,8 @@ GameObject:
   - component: {fileID: 23590208942565264}
   - component: {fileID: 65952052427377280}
   - component: {fileID: 114514297265489730}
-  - component: {fileID: 114328379446870948}
-  - component: {fileID: 114637417008567542}
+  - component: {fileID: 114061003718849020}
+  - component: {fileID: 114971063802437538}
   m_Layer: 0
   m_Name: Brick (1)
   m_TagString: Untagged
@@ -99,7 +99,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114328379446870948
+--- !u!114 &114061003718849020
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -107,30 +107,19 @@ MonoBehaviour:
   m_GameObject: {fileID: 1242235970455102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 120
-    i1: 161
-    i2: 181
-    i3: 56
-    i4: 105
-    i5: 112
-    i6: 131
-    i7: 52
-    i8: 75
-    i9: 186
-    i10: 245
-    i11: 36
-    i12: 78
-    i13: 9
-    i14: 24
-    i15: 183
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114971063802437538}
+  viewIdField: 0
+  InstantiationId: 0
+  isRuntimeInstantiated: 0
 --- !u!114 &114514297265489730
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -144,7 +133,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   brickParticle: {fileID: 1338220747174972, guid: fca4d56492998de44a371d68a769b949,
     type: 2}
---- !u!114 &114637417008567542
+--- !u!114 &114971063802437538
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}
@@ -152,16 +141,27 @@ MonoBehaviour:
   m_GameObject: {fileID: 1242235970455102}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: -1768714887, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
+  m_Script: {fileID: 11500000, guid: 8efc6b1d64977384eb3405357896c656, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_TransformSyncMode: 1
-  m_SendInterval: 0.1
-  m_SyncRotationAxis: 7
-  m_RotationSyncCompression: 0
-  m_SyncSpin: 0
-  m_MovementTheshold: 0.001
-  m_VelocityThreshold: 0.0001
-  m_SnapThreshold: 5
-  m_InterpolateRotation: 1
-  m_InterpolateMovement: 1
+  m_PositionModel:
+    SynchronizeEnabled: 1
+    TeleportEnabled: 1
+    TeleportIfDistanceGreaterThan: 3
+    InterpolateOption: 2
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 1
+    ExtrapolateOption: 0
+    ExtrapolateSpeed: 1
+    ExtrapolateIncludingRoundTripTime: 1
+    ExtrapolateNumberOfStoredPositions: 1
+  m_RotationModel:
+    SynchronizeEnabled: 1
+    InterpolateOption: 1
+    InterpolateRotateTowardsSpeed: 180
+    InterpolateLerpSpeed: 5
+  m_ScaleModel:
+    SynchronizeEnabled: 0
+    InterpolateOption: 0
+    InterpolateMoveTowardsSpeed: 1
+    InterpolateLerpSpeed: 0

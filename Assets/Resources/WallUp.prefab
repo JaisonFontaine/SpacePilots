@@ -22,8 +22,7 @@ GameObject:
   - component: {fileID: 33971288811506444}
   - component: {fileID: 23672019382375682}
   - component: {fileID: 65867033088724336}
-  - component: {fileID: 114591052554712492}
-  - component: {fileID: 114363028573513656}
+  - component: {fileID: 114860285614652118}
   m_Layer: 0
   m_Name: WallUp
   m_TagString: Untagged
@@ -38,7 +37,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1594949197785108}
   m_LocalRotation: {x: -0, y: -0, z: 0.7071068, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 5.61, z: -0.11328125}
+  m_LocalPosition: {x: 0, y: 6.5, z: -0.11328125}
   m_LocalScale: {x: 1.0000005, y: 10.170013, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
@@ -98,39 +97,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &114363028573513656
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1594949197785108}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 372142912, guid: dc443db3e92b4983b9738c1131f555cb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_SceneId:
-    m_Value: 0
-  m_AssetId:
-    i0: 228
-    i1: 107
-    i2: 118
-    i3: 173
-    i4: 22
-    i5: 32
-    i6: 74
-    i7: 212
-    i8: 11
-    i9: 126
-    i10: 18
-    i11: 97
-    i12: 45
-    i13: 53
-    i14: 28
-    i15: 115
-  m_ServerOnly: 0
-  m_LocalPlayerAuthority: 0
---- !u!114 &114591052554712492
+--- !u!114 &114860285614652118
 MonoBehaviour:
   m_ObjectHideFlags: 1
   m_CorrespondingSourceObject: {fileID: 0}

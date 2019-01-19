@@ -1,21 +1,22 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using Photon.Pun;
 
-public class Bricks : NetworkBehaviour {
+namespace Com.JaisonFontaine.SpacePilots {
+    public class Bricks : MonoBehaviourPunCallbacks {
 
-    public GameObject brickParticle;
+        public GameObject brickParticle;
 
-    private GM scriptGM;
+        //private GameManager scriptGM;
 
-    void Start() {
-        scriptGM = FindObjectOfType<GM>();
-    }
+        void Start() {
+            //scriptGM = FindObjectOfType<GameManager>();
+        }
 
-    void OnCollisionEnter(Collision other) {
-        //Instantiate(brickParticle, transform.position, Quaternion.identity);
-        scriptGM.CmdDestroyBrick();
-        Destroy(gameObject);
+        void OnCollisionEnter(Collision other) {
+            //Instantiate(brickParticle, transform.position, Quaternion.identity);
+            GameManager.Instance.GetComponent<PhotonView>().RPC("RpcDestroyBrick", RpcTarget.All, gameObject.GetPhotonView().ViewID);
+        }
     }
 }

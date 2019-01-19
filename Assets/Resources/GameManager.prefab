@@ -20,6 +20,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4060161235952338}
   - component: {fileID: 114888468489393026}
+  - component: {fileID: 114887752059426576}
   m_Layer: 0
   m_Name: GameManager
   m_TagString: Untagged
@@ -40,6 +41,27 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &114887752059426576
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1263126375820476}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa584fbee541324448dd18d8409c7a41, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ObservedComponentsFoldoutOpen: 1
+  Group: 0
+  prefixField: -1
+  Synchronization: 3
+  OwnershipTransfer: 0
+  ObservedComponents:
+  - {fileID: 114888468489393026}
+  viewIdField: 0
+  InstantiationId: 1
+  isRuntimeInstantiated: 0
 --- !u!114 &114888468489393026
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -55,3 +77,11 @@ MonoBehaviour:
     type: 2}
   SpawnBas: {fileID: 0}
   SpawnHaut: {fileID: 0}
+  bricks: {fileID: 1370965369752032, guid: 4c3b05f83c5ef314487f5b2a3733e7b2, type: 2}
+  spawnBricks: {fileID: 0}
+  listBricks:
+  - {fileID: 1242235970455102, guid: 78a1b538697083344bbaf5244e0918b7, type: 2}
+  - {fileID: 1314578232565610, guid: b0652b01d83b7b440914c5f0144695c8, type: 2}
+  - {fileID: 1461865499427980, guid: c5ccbe8ed22714645b7c94ff6ce6deb1, type: 2}
+  nbBricks: 35
+  resetDelay: 0.5

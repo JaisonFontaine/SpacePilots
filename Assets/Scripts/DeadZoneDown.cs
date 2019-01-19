@@ -1,17 +1,19 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Networking;
+using Photon.Pun;
 
-public class DeadZoneDown : NetworkBehaviour {
+namespace Com.JaisonFontaine.SpacePilots {
+    public class DeadZoneDown : MonoBehaviourPunCallbacks {
 
-    private GM scriptGM;
+        //private GameManager scriptGM;
 
-    void Start() {
-        scriptGM = FindObjectOfType<GM>();
-    }
+        void Start() {
+            //scriptGM = FindObjectOfType<GameManager>();
+        }
 
-    void OnTriggerEnter(Collider col) {
-        scriptGM.CmdLoseLife1(col.GetComponent<Ball>().playerUp);
+        void OnTriggerEnter(Collider col) {
+            GameManager.Instance.LoseLife1(col.gameObject, col.GetComponent<Ball>().idPlayerBall);
+        }
     }
 }

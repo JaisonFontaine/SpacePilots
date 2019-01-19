@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 using Photon.Pun;
+using Photon.Realtime;
 
 namespace Com.JaisonFontaine.SpacePilots {
     public class PlayerController : MonoBehaviourPunCallbacks, IPunObservable {
@@ -11,10 +12,8 @@ namespace Com.JaisonFontaine.SpacePilots {
         private Vector3 playerPos;
         private float xPos;
 
-        //private PlayerController[] listPlayers;
-
         private Rigidbody rbBall;
-        //private Ball scriptBall;
+        private Ball scriptBall;
 
         #endregion
 
@@ -29,12 +28,13 @@ namespace Com.JaisonFontaine.SpacePilots {
         public GameObject spawnBall;
         public GameObject cloneBall;
 
-        //[SyncVar] public bool isSpawnUp = false;
-
         public bool isReady = false;
-        //[SyncVar] public bool allReady = false;
+        public bool allReady = false;
 
         public bool ballInPlay = false;
+
+        [Tooltip("The current Health of player")]
+        public int livesPlayer = 3;
 
         #endregion
 
@@ -45,11 +45,15 @@ namespace Com.JaisonFontaine.SpacePilots {
             if (stream.IsWriting)
             {
                 // We own this player: send the others our data
+                stream.SendNext(isReady);
+                stream.SendNext(allReady);
                 stream.SendNext(ballInPlay);
             }
             else
             {
                 // Network player, receive data
+                this.isReady = (bool)stream.ReceiveNext();
+                this.allReady = (bool)stream.ReceiveNext();
                 this.ballInPlay = (bool)stream.ReceiveNext();
             }
         }
@@ -81,34 +85,31 @@ namespace Com.JaisonFontaine.SpacePilots {
             // #Critical
             // we flag as don't destroy on load so that instance survives level synchronization, thus giving a seamless experience when levels load.
             DontDestroyOnLoad(this.gameObject);
+
             spawnBall = transform.Find("SpawnBall").gameObject;
+        }
 
-            /*if (transform.position.y == GameObject.Find("SpawnBas").transform.position.y) {
-                //Player Bas
-                Debug.Log("Player Bas");
-                isSpawnUp = false;
+        void Start() {
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                if (PhotonNetwork.IsMasterClient) {
+                    GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, false);
+                }
+                else {
+                    GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID, false);
+                }
             }
-
-            if (transform.position.y == GameObject.Find("SpawnHaut").transform.position.y) {
-                //Player Haut
-                Debug.Log("Player Haut");
-                isSpawnUp = true;
-            }*/
+            else {
+                GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, false);
+            }
         }
 
         void FixedUpdate() {
-            /*listPlayers = FindObjectsOfType<PlayerController>();
-
-            if (listPlayers.Length == 2 && listPlayers[0].isReady && listPlayers[1].isReady && allReady == false) {
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady && allReady == false) {
                 allReady = true;
-            }*/
+            }
         }
 
         void Update() {
-            /*if (!isLocalPlayer) {
-                return;
-            }*/
-
             if (!photonView.IsMine && PhotonNetwork.IsConnected) {
                 return;
             }
@@ -125,13 +126,13 @@ namespace Com.JaisonFontaine.SpacePilots {
             playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
             transform.position = playerPos;
 
-            if(Input.GetKey(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+            if (Input.GetKeyDown(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
                 SpawnBall();
             }
 
-            /*if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
-                CmdShootBall();
-            }*/
+            if (Input.GetKeyDown(KeyCode.Space) && allReady == true && ballInPlay == false) {
+                ShootBall();
+            }
 #else
             /*Touch touch = Input.GetTouch(0);
 
@@ -160,39 +161,39 @@ namespace Com.JaisonFontaine.SpacePilots {
             isReady = true;
             ballInPlay = false;
 
-            cloneBall =  PhotonNetwork.Instantiate(ball.name, spawnBall.transform.position, Quaternion.identity, 0);
+            cloneBall =  PhotonNetwork.Instantiate(ball.name, spawnBall.transform.position, Quaternion.identity, 0) as GameObject;
 
-            cloneBall.transform.SetParent(transform);
-            /*scriptBall = cloneBall.GetComponent<Ball>();
+            GetComponent<PhotonView>().RPC("RpcSetParent", RpcTarget.All, gameObject.GetPhotonView().ViewID, cloneBall.GetPhotonView().ViewID);
 
-            if (isSpawnUp) {
-                scriptBall.playerUp = true;
-            } else {
-                scriptBall.playerUp = false;
-            }*/
+            scriptBall = cloneBall.GetComponent<Ball>();
+            scriptBall.idPlayerBall = gameObject.GetPhotonView().ViewID;
         }
 
-        /*[Command]
-        void CmdShootBall() {
+        void ShootBall() {
             ballInPlay = true;
-            cloneBall.transform.parent = null;
+
+            GetComponent<PhotonView>().RPC("RpcSetParent", RpcTarget.All, -1, cloneBall.GetPhotonView().ViewID);
+
             rbBall = cloneBall.GetComponent<Rigidbody>();
             rbBall.isKinematic = false;
-            rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
+
+            if (PhotonNetwork.IsMasterClient) {
+                //Player Bas
+                rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
+            } else {
+                //Player Haut
+                rbBall.AddForce(new Vector3(-scriptBall.ballInitialVelocity, -scriptBall.ballInitialVelocity, 0));
+            }
         }
 
-        public override void OnStartLocalPlayer() {
-            GetComponent<MeshRenderer>().material.color = Color.blue;
-
-            if (!isSpawnUp) {
-                //Player Bas
-                Camera.main.transform.rotation = Quaternion.Euler(0, 0, 0);
+        [PunRPC]
+        void RpcSetParent(int idParent, int idChild) {
+            if (idParent == -1) {
+                PhotonView.Find(idChild).transform.parent = null;
             }
-
-            if (isSpawnUp) {
-                //Player Haut
-                Camera.main.transform.rotation = Quaternion.Euler(0, 0, 180);
-            }
-        }*/
+            else {
+                PhotonView.Find(idChild).transform.parent = PhotonView.Find(idParent).transform;
+            } 
+        }
     }
 }

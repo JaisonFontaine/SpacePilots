@@ -31,4 +31,23 @@ MonoBehaviour:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
+  - SetParentBall
+  - RpcMajLife1
+  - RpcMajLife2
+  - SpawnBricks
+  - TagBricks
+  - Spawn
+  - RpcSpawnBall
+  - RpcShootBall
+  - RpcSpawnBricks
+  - RpcSetParentBall
+  - RpcSetParent
+  - RpcDestroyBall
+  - RpcMajName
+  - RpcDestroyBrick
+  - RpcMajName1
+  - RpcMajName2
+  - RpcCheckGameOver1
+  - RpcCheckGameOver2
+  - RpcDestroyAllBricks
   DisableAutoOpenWizard: 1

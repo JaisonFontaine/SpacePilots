@@ -1,21 +1,120 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
 namespace Com.JaisonFontaine.SpacePilots
 {
-    public class GameManager : MonoBehaviourPunCallbacks {
+    public class GameManager : MonoBehaviourPunCallbacks, IPunObservable {
 
         #region Public Fields
 
         public static GameManager Instance;
+
         [Tooltip("The prefab to use for representing the player")]
         public GameObject playerPrefab;
         public GameObject SpawnBas;
         public GameObject SpawnHaut;
+
+        public GameObject bricks;
+        public GameObject spawnBricks;
+        public GameObject[] listBricks;
+        public int nbBricks = 35;
+        public float resetDelay = 1f;
+
+        #endregion
+
+
+        #region Private Methods
+
+        void Start() {
+            Instance = this;
+
+            if (playerPrefab == null) {
+                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+            }
+            else {
+                if (PlayerController.LocalPlayerInstance == null) {
+                    if (PhotonNetwork.IsMasterClient) {
+                        Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
+                        // we're in a room. spawn a character for the local player 1. it gets synced by using PhotonNetwork.Instantiate
+                        PhotonNetwork.Instantiate(playerPrefab.name, SpawnBas.transform.position, SpawnBas.transform.rotation, 0);
+                    }
+                    else {
+                        Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
+                        // we're in a room. spawn a character for the local player 2. it gets synced by using PhotonNetwork.Instantiate
+                        PhotonNetwork.Instantiate(playerPrefab.name, SpawnHaut.transform.position, SpawnHaut.transform.rotation, 0);
+                    }
+                }
+                else {
+                    Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
+                }  
+            }
+            
+
+            if (PhotonNetwork.IsMasterClient) {
+                if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                    GameObject cloneBricks = PhotonNetwork.Instantiate(bricks.name, spawnBricks.transform.position, Quaternion.identity, 0) as GameObject;
+
+                    Transform[] spawnPoints = spawnBricks.GetComponentsInChildren<Transform>();
+
+                    foreach (Transform spawnPoint in spawnPoints)
+                    {
+                        GameObject cloneBrick = PhotonNetwork.Instantiate(listBricks[Random.Range(0, listBricks.Length)].name, spawnPoint.transform.position, Quaternion.identity, 0) as GameObject;
+                        GetComponent<PhotonView>().RPC("RpcSetParent", RpcTarget.All, cloneBricks.GetPhotonView().ViewID, cloneBrick.GetPhotonView().ViewID);
+                    }
+                }
+            }
+        }
+
+        void LoadGame() {
+            if (!PhotonNetwork.IsMasterClient) {
+                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
+            }
+            Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
+            PhotonNetwork.LoadLevel("Main");
+        }
+
+
+        #endregion
+
+
+        #region Public Methods
+
+        public void LeaveRoom()
+        {
+            PhotonNetwork.LeaveRoom();
+        }
+
+        void Reset()
+        {
+            Time.timeScale = 1f;
+            LeaveRoom();
+        }
+
+
+        #endregion
+
+
+        #region IPunObservable implementation
+
+        public void OnPhotonSerializeView(PhotonStream stream, PhotonMessageInfo info)
+        {
+            if (stream.IsWriting)
+            {
+                // We own this player: send the others our data
+                //stream.SendNext(nbBricks);
+            }
+            else
+            {
+                // Network player, receive data
+                //this.nbBricks = (int)stream.ReceiveNext();
+            }
+        }
+
 
         #endregion
 
@@ -59,65 +158,133 @@ namespace Com.JaisonFontaine.SpacePilots
             }
         }
 
-
-        #endregion
-
-
-        #region Private Methods
-
-        void Start()
+        public void LoseLife1(GameObject ball, int idPlayerBall)
         {
-            Instance = this;
+            GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, true);
 
-            if (playerPrefab == null)
+            GetComponent<PhotonView>().RPC("RpcDestroyBall", RpcTarget.All, ball.GetPhotonView().ViewID);
+
+            PhotonView.Find(idPlayerBall).GetComponent<PlayerController>().SpawnBall();
+
+            //Instantiate(deathParticles, transform.position, Quaternion.identity);
+            //Invoke("SetupPaddle", resetDelay);
+
+            GetComponent<PhotonView>().RPC("RpcCheckGameOver1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().livesPlayer);
+        }
+
+        public void LoseLife2(GameObject ball, int idPlayerBall)
+        {
+            GetComponent<PhotonView>().RPC("RpcMajLife2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID, true);
+
+            GetComponent<PhotonView>().RPC("RpcDestroyBall", RpcTarget.All, ball.GetPhotonView().ViewID);
+
+            PhotonView.Find(idPlayerBall).GetComponent<PlayerController>().SpawnBall();
+
+            //Instantiate(deathParticles, transform.position, Quaternion.identity);
+            //Invoke("SetupPaddle", resetDelay);
+
+            GetComponent<PhotonView>().RPC("RpcCheckGameOver2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().livesPlayer);
+        }
+
+        [PunRPC]
+        void RpcCheckGameOver1(int livesPlayer1)
+        {
+            if (livesPlayer1 < 1)
             {
-                Debug.LogError("<Color=Red><a>Missing</a></Color> playerPrefab Reference. Please set it up in GameObject 'Game Manager'", this);
+                if (PhotonNetwork.IsMasterClient) {
+                    //Player Bas
+                    GameObject.Find("MsgEnd").GetComponent<Text>().text = "GameOver";
+                    //GameObject.Find("Bricks").SetActive(false);
+                }
+                else {
+                    //Player Haut
+                    GameObject.Find("MsgEnd").GetComponent<Text>().text = "YouWon";
+                }
+
+                Time.timeScale = 0.25f;
+                Invoke("Reset", resetDelay);
             }
-            else
+        }
+
+        [PunRPC]
+        void RpcCheckGameOver2(int livesPlayer2)
+        {
+            if (livesPlayer2 < 1)
             {
-                if (PlayerController.LocalPlayerInstance == null)
+                if (PhotonNetwork.IsMasterClient)
                 {
-                    if (PhotonNetwork.IsMasterClient)
-                    {
-                        Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-                        // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                        PhotonNetwork.Instantiate(this.playerPrefab.name, SpawnBas.transform.position, SpawnBas.transform.rotation, 0);
-                    }
-                    else
-                    {
-                        Debug.LogFormat("We are Instantiating LocalPlayer from {0}", SceneManagerHelper.ActiveSceneName);
-                        // we're in a room. spawn a character for the local player. it gets synced by using PhotonNetwork.Instantiate
-                        PhotonNetwork.Instantiate(this.playerPrefab.name, SpawnHaut.transform.position, SpawnHaut.transform.rotation, 0);
-                    }
+                    //Player Bas
+                    GameObject.Find("MsgEnd").GetComponent<Text>().text = "GameOver";
+                    //GameObject.Find("Bricks").SetActive(false);
                 }
                 else
                 {
-                    Debug.LogFormat("Ignoring scene load for {0}", SceneManagerHelper.ActiveSceneName);
-                }  
+                    //Player Haut
+                    GameObject.Find("MsgEnd").GetComponent<Text>().text = "YouWon";
+                }
+                
+                Time.timeScale = 0.25f;
+                Invoke("Reset", resetDelay);
             }
         }
 
-        void LoadGame()
+        [PunRPC]
+        public void RpcMajLife1(int idPlayer1, bool isLoseLife1)
         {
-            if (!PhotonNetwork.IsMasterClient)
+            if (isLoseLife1 && PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer > 0) {
+                PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer--;
+            }
+
+            if (PhotonNetwork.IsMasterClient)
             {
-                Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
+                //Player Bas
+                GameObject.Find("LivesPlayer1").GetComponent<Text>().text = PhotonView.Find(idPlayer1).Owner.NickName + " : " + PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer;
             }
-            Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-            PhotonNetwork.LoadLevel("Main");
+            else
+            {
+                //Player Haut
+                GameObject.Find("LivesPlayer2").GetComponent<Text>().text = PhotonView.Find(idPlayer1).Owner.NickName + " : " + PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer;
+            }
         }
 
-
-        #endregion
-
-
-        #region Public Methods
-
-        public void LeaveRoom()
+        [PunRPC]
+        public void RpcMajLife2(int idPlayer2, bool isLoseLife2)
         {
-            PhotonNetwork.LeaveRoom();
+            if (isLoseLife2 && PhotonView.Find(idPlayer2).GetComponent<PlayerController>().livesPlayer > 0)
+            {
+                PhotonView.Find(idPlayer2).GetComponent<PlayerController>().livesPlayer--;
+            }
+
+            if (PhotonNetwork.IsMasterClient)
+            {
+                //Player Bas
+                GameObject.Find("LivesPlayer2").GetComponent<Text>().text = PhotonView.Find(idPlayer2).Owner.NickName + " : " + PhotonView.Find(idPlayer2).GetComponent<PlayerController>().livesPlayer;
+            }
+            else
+            {
+                //Player Haut
+                GameObject.Find("LivesPlayer1").GetComponent<Text>().text = PhotonView.Find(idPlayer2).Owner.NickName + " : " + PhotonView.Find(idPlayer2).GetComponent<PlayerController>().livesPlayer;
+            }
         }
 
+        [PunRPC]
+        void RpcDestroyBall(int idBall)
+        {
+            Destroy(PhotonView.Find(idBall).gameObject);
+        }
+
+        [PunRPC]
+        void RpcSetParent(int idParent, int idChild)
+        {
+            PhotonView.Find(idChild).transform.parent = PhotonView.Find(idParent).transform;
+        }
+
+        [PunRPC]
+        public void RpcDestroyBrick(int idBrick)
+        {
+            nbBricks--;
+            Destroy(PhotonView.Find(idBrick).gameObject);
+        }
 
         #endregion
     }
