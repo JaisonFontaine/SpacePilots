@@ -142,7 +142,7 @@ MeshCollider:
   m_IsTrigger: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Convex: 0
+  m_Convex: 1
   m_CookingOptions: 14
   m_SkinWidth: 0.01
   m_Mesh: {fileID: 4300000, guid: 6eeb7009ecd02bd4c900f28d807a8c47, type: 3}
@@ -189,7 +189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5f5508606ceb1e428f27a9ff4aff666, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  paddleSpeed: 1
+  paddleSpeed: 0.5
   ball: {fileID: 1667907487900972, guid: fbc77a11a02310d4d87c11263575c7f2, type: 2}
   spawnBall: {fileID: 0}
   cloneBall: {fileID: 0}
@@ -217,5 +217,5 @@ MonoBehaviour:
   - {fileID: 114373170571513092}
   - {fileID: 114816910203390394}
   viewIdField: 0
-  InstantiationId: 1
+  InstantiationId: 2
   isRuntimeInstantiated: 0
