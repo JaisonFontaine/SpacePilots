@@ -93,19 +93,24 @@ namespace Com.JaisonFontaine.SpacePilots {
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
                 if (PhotonNetwork.IsMasterClient) {
                     GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, false);
+                    Debug.Log("Player 1 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID);
                 }
                 else {
                     GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID, false);
+                    Debug.Log("Player 2 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID);
                 }
             }
             else {
                 GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, false);
+                Debug.Log("Player 1 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID);
             }
         }
 
         void FixedUpdate() {
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady && allReady == false) {
                 allReady = true;
+                Debug.Log("Player 1 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady);
+                Debug.Log("Player 2 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady);
             }
         }
 

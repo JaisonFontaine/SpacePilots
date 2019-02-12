@@ -84,4 +84,4 @@ MonoBehaviour:
   - {fileID: 1314578232565610, guid: b0652b01d83b7b440914c5f0144695c8, type: 2}
   - {fileID: 1461865499427980, guid: c5ccbe8ed22714645b7c94ff6ce6deb1, type: 2}
   nbBricks: 35
-  resetDelay: 0.5
+  resetDelay: 1

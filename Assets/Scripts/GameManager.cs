@@ -91,7 +91,7 @@ namespace Com.JaisonFontaine.SpacePilots
 
         void Reset()
         {
-            Time.timeScale = 1f;
+            //Time.timeScale = 1f;
             LeaveRoom();
         }
 
@@ -154,7 +154,8 @@ namespace Com.JaisonFontaine.SpacePilots
                 Debug.LogFormat("OnPlayerLeftRoom IsMasterClient {0}", PhotonNetwork.IsMasterClient); // called before OnPlayerLeftRoom
 
 
-                LoadGame();
+                //LoadGame();
+                LeaveRoom();
             }
         }
 
@@ -201,7 +202,13 @@ namespace Com.JaisonFontaine.SpacePilots
                     GameObject.Find("MsgEnd").GetComponent<Text>().text = "YouWon";
                 }
 
-                Time.timeScale = 0.25f;
+                PlayerController[] players = GameObject.FindObjectsOfType<PlayerController>();
+
+                foreach(PlayerController player in players) {
+                    player.enabled = false;
+                }
+
+                //Time.timeScale = 0.25f;
                 Invoke("Reset", resetDelay);
             }
         }
@@ -222,8 +229,14 @@ namespace Com.JaisonFontaine.SpacePilots
                     //Player Haut
                     GameObject.Find("MsgEnd").GetComponent<Text>().text = "YouWon";
                 }
-                
-                Time.timeScale = 0.25f;
+
+                PlayerController[] players = GameObject.FindObjectsOfType<PlayerController>();
+
+                foreach (PlayerController player in players) {
+                    player.enabled = false;
+                }
+
+                //Time.timeScale = 0.25f;
                 Invoke("Reset", resetDelay);
             }
         }
