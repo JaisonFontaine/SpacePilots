@@ -6,14 +6,36 @@ ModelImporter:
     100000: //RootNode
     100002: obj_planet_home
     100004: rig_planet_generic
+    100006: pr_surface
+    100008: pr_water
     400000: //RootNode
     400002: obj_planet_home
     400004: rig_planet_generic
+    400006: pr_surface
+    400008: pr_water
     2100000: lambert25
+    2100002: lambert32
+    2100004: lambert33
     2300000: obj_planet_home
+    2300002: pr_surface
+    2300004: pr_water
     3300000: obj_planet_home
+    3300002: pr_surface
+    3300004: pr_water
     4300000: obj_planet_home
-  externalObjects: {}
+    4300002: pr_water
+    4300004: pr_surface
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert32
+    second: {fileID: 2100000, guid: b2202cb97bbc2664d9eb0e5d29d42891, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: lambert33
+    second: {fileID: 2100000, guid: 84aac1bcd63fc044eb3e19b6afd4edca, type: 2}
   materials:
     importMaterials: 1
     materialName: 0
