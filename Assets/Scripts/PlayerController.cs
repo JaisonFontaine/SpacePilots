@@ -131,11 +131,11 @@ namespace Com.JaisonFontaine.SpacePilots {
             playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
             transform.position = playerPos;
 
-            if (Input.GetKeyDown(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+            if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
                 SpawnBall();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && allReady == true && ballInPlay == false) {
+            if (Input.GetKeyDown(KeyCode.Space) && isReady == true && ballInPlay == false) {
                 ShootBall();
             }
 #else
@@ -185,9 +185,11 @@ namespace Com.JaisonFontaine.SpacePilots {
             if (PhotonNetwork.IsMasterClient) {
                 //Player Bas
                 rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
+                //rbBall.velocity = new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0) * 0.02f;
             } else {
                 //Player Haut
                 rbBall.AddForce(new Vector3(-scriptBall.ballInitialVelocity, -scriptBall.ballInitialVelocity, 0));
+                //rbBall.velocity = new Vector3(-scriptBall.ballInitialVelocity, -scriptBall.ballInitialVelocity, 0) * 0.02f;
             }
         }
 

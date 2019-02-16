@@ -56,7 +56,6 @@ namespace Com.JaisonFontaine.SpacePilots
             
 
             if (PhotonNetwork.IsMasterClient) {
-                if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
                     GameObject cloneBricks = PhotonNetwork.Instantiate(bricks.name, spawnBricks.transform.position, Quaternion.identity, 0) as GameObject;
 
                     Transform[] spawnPoints = spawnBricks.GetComponentsInChildren<Transform>();
@@ -66,7 +65,6 @@ namespace Com.JaisonFontaine.SpacePilots
                         GameObject cloneBrick = PhotonNetwork.Instantiate(listBricks[Random.Range(0, listBricks.Length)].name, spawnPoint.transform.position, Quaternion.identity, 0) as GameObject;
                         GetComponent<PhotonView>().RPC("RpcSetParent", RpcTarget.All, cloneBricks.GetPhotonView().ViewID, cloneBrick.GetPhotonView().ViewID);
                     }
-                }
             }
         }
 

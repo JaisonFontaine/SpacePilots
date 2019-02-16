@@ -12,6 +12,7 @@ namespace Com.JaisonFontaine.SpacePilots
 
         public float ballInitialVelocity = 400f;
         public int idPlayerBall;
+        private Rigidbody rbBall;
 
         #endregion
 
@@ -41,8 +42,34 @@ namespace Com.JaisonFontaine.SpacePilots
 
         }
 
+        void Start() {
+            rbBall = GetComponent<Rigidbody>();
+        }
+
         void Update() {
         
+        }
+
+        void OnCollisionEnter(Collision other) {
+            if (other.transform.tag == "Player") {
+                ContactPoint contact = other.contacts[0];
+
+                if (contact.point.x < other.transform.position.x) {
+                    Debug.Log("droite");
+
+                    rbBall.velocity = new Vector3(-ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+                }
+                else if (contact.point.x > other.transform.position.x) {
+                    Debug.Log("gauche");
+
+                    rbBall.velocity = new Vector3(ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+                }
+                else {
+                    Debug.Log("milieu");
+
+                    rbBall.velocity = new Vector3(0, 0, 0) * 0.2f;
+                }
+            }
         }
 
         #endregion
