@@ -93,24 +93,24 @@ namespace Com.JaisonFontaine.SpacePilots {
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
                 if (PhotonNetwork.IsMasterClient) {
                     GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, false);
-                    Debug.Log("Player 1 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID);
+                    //Debug.Log("Player 1 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID);
                 }
                 else {
                     GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID, false);
-                    Debug.Log("Player 2 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID);
+                    //Debug.Log("Player 2 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID);
                 }
             }
             else {
                 GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, false);
-                Debug.Log("Player 1 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID);
+                //Debug.Log("Player 1 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID);
             }
         }
 
         void FixedUpdate() {
             if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady && allReady == false) {
                 allReady = true;
-                Debug.Log("Player 1 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady);
-                Debug.Log("Player 2 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady);
+                //Debug.Log("Player 1 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady);
+                //Debug.Log("Player 2 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady);
             }
         }
 
@@ -122,20 +122,29 @@ namespace Com.JaisonFontaine.SpacePilots {
 #if (UNITY_EDITOR || UNITY_STANDALONE)
             if (PhotonNetwork.IsMasterClient) {
                 //Player Bas
-                xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
-            } else {
+                //xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
+                xPos = transform.position.x + (Input.GetAxis("Mouse X") * paddleSpeed);
+            }
+            else {
                 //Player Haut
-                xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
+                //xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
+                xPos = transform.position.x + (Input.GetAxis("Mouse X") * -paddleSpeed);
             }
 
             playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
             transform.position = playerPos;
 
-            if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
+            //if (Input.GetKeyDown(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+            //if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
+            if (Input.GetButtonDown("Fire1") && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+            //if (Input.GetButtonDown("Fire1") && isReady == false) {
                 SpawnBall();
             }
 
-            if (Input.GetKeyDown(KeyCode.Space) && isReady == true && ballInPlay == false) {
+            //if (Input.GetKeyDown(KeyCode.Space) && allReady == true && ballInPlay == false) {
+            //if (Input.GetKeyDown(KeyCode.Space) && isReady == true && ballInPlay == false) {
+            if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
+            //if (Input.GetButtonDown("Fire1") && isReady == true && ballInPlay == false) {
                 ShootBall();
             }
 #else
@@ -182,14 +191,17 @@ namespace Com.JaisonFontaine.SpacePilots {
             rbBall = cloneBall.GetComponent<Rigidbody>();
             rbBall.isKinematic = false;
 
+            //Debug.Log("mouse position : " + Input.mousePosition.x);
+            //Debug.Log("ball velocity : " + scriptBall.ballInitialVelocity);
+
             if (PhotonNetwork.IsMasterClient) {
                 //Player Bas
                 rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
-                //rbBall.velocity = new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0) * 0.02f;
+                rbBall.velocity = new Vector3(Input.mousePosition.x, scriptBall.ballInitialVelocity, 0) * 0.02f;
             } else {
                 //Player Haut
                 rbBall.AddForce(new Vector3(-scriptBall.ballInitialVelocity, -scriptBall.ballInitialVelocity, 0));
-                //rbBall.velocity = new Vector3(-scriptBall.ballInitialVelocity, -scriptBall.ballInitialVelocity, 0) * 0.02f;
+                //rbBall.velocity = new Vector3(-Input.mousePosition.x, -scriptBall.ballInitialVelocity, 0) * 0.02f;
             }
         }
 
