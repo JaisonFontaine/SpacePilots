@@ -24,6 +24,7 @@ namespace Com.JaisonFontaine.SpacePilots {
         [Tooltip("The local player instance. Use this to know if the local player is represented in the Scene")]
         public static GameObject LocalPlayerInstance;
         public GameObject ball;
+        public Vector3 target;
 
         public GameObject spawnBall;
         public GameObject cloneBall;
@@ -107,11 +108,11 @@ namespace Com.JaisonFontaine.SpacePilots {
         }
 
         void FixedUpdate() {
-            if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady && allReady == false) {
-                allReady = true;
+            //if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady && allReady == false) {
+                //allReady = true;
                 //Debug.Log("Player 1 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady);
                 //Debug.Log("Player 2 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady);
-            }
+            //}
         }
 
         void Update() {
@@ -120,32 +121,35 @@ namespace Com.JaisonFontaine.SpacePilots {
             }
 
 #if (UNITY_EDITOR || UNITY_STANDALONE)
-            if (PhotonNetwork.IsMasterClient) {
-                //Player Bas
-                //xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);
-                xPos = transform.position.x + (Input.GetAxis("Mouse X") * paddleSpeed);
-            }
-            else {
-                //Player Haut
-                //xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
-                xPos = transform.position.x + (Input.GetAxis("Mouse X") * -paddleSpeed);
-            }
+            if (Input.mousePosition.x >= 0 && Input.mousePosition.x <= Screen.width) {
+                if (PhotonNetwork.IsMasterClient) {
+                    //Player Bas
+                    //xPos = transform.position.x + (Input.GetAxis("Horizontal") * paddleSpeed);                    {
+                    xPos = transform.position.x + (Input.GetAxis("Mouse X") * paddleSpeed);
+                }
+                else {
+                    //Player Haut
+                    //xPos = transform.position.x + (Input.GetAxis("Horizontal") * -paddleSpeed);
+                    xPos = transform.position.x + (Input.GetAxis("Mouse X") * -paddleSpeed);
+                }
 
-            playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
-            transform.position = playerPos;
+                playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
+                transform.position = playerPos;
 
-            //if (Input.GetKeyDown(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
-            //if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
-            if (Input.GetButtonDown("Fire1") && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
-            //if (Input.GetButtonDown("Fire1") && isReady == false) {
-                SpawnBall();
-            }
+                //if (Input.GetKeyDown(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                //if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
+                //if (Input.GetButtonDown("Fire1") && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                if (Input.GetButtonDown("Fire1") && isReady == false) {
+                    SpawnBall();
+                }
 
-            //if (Input.GetKeyDown(KeyCode.Space) && allReady == true && ballInPlay == false) {
-            //if (Input.GetKeyDown(KeyCode.Space) && isReady == true && ballInPlay == false) {
-            if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
-            //if (Input.GetButtonDown("Fire1") && isReady == true && ballInPlay == false) {
-                ShootBall();
+                //if (Input.GetKeyDown(KeyCode.Space) && allReady == true && ballInPlay == false) {
+                //if (Input.GetKeyDown(KeyCode.Space) && isReady == true && ballInPlay == false) {
+                //if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
+                if (Input.GetButtonDown("Fire1") && isReady == true && ballInPlay == false) {
+                    target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                    ShootBall();
+                }
             }
 #else
             /*Touch touch = Input.GetTouch(0);
@@ -191,18 +195,17 @@ namespace Com.JaisonFontaine.SpacePilots {
             rbBall = cloneBall.GetComponent<Rigidbody>();
             rbBall.isKinematic = false;
 
-            //Debug.Log("mouse position : " + Input.mousePosition.x);
-            //Debug.Log("ball velocity : " + scriptBall.ballInitialVelocity);
+            rbBall.velocity = new Vector3(target.x, target.y, 0) * 0.02f;
 
-            if (PhotonNetwork.IsMasterClient) {
+            /*if (PhotonNetwork.IsMasterClient) {
                 //Player Bas
-                rbBall.AddForce(new Vector3(scriptBall.ballInitialVelocity, scriptBall.ballInitialVelocity, 0));
-                rbBall.velocity = new Vector3(Input.mousePosition.x, scriptBall.ballInitialVelocity, 0) * 0.02f;
+                //rbBall.AddForce(new Vector3(target.x, target.y, 0));
+                rbBall.velocity = new Vector3(target.x, target.y, 0) * 0.02f;
             } else {
                 //Player Haut
-                rbBall.AddForce(new Vector3(-scriptBall.ballInitialVelocity, -scriptBall.ballInitialVelocity, 0));
-                //rbBall.velocity = new Vector3(-Input.mousePosition.x, -scriptBall.ballInitialVelocity, 0) * 0.02f;
-            }
+                //rbBall.AddForce(new Vector3(-target.x, -target.y, 0));
+                rbBall.velocity = new Vector3(-target.x, -target.y, 0) * 0.02f;
+            }*/
         }
 
         [PunRPC]

@@ -54,18 +54,38 @@ namespace Com.JaisonFontaine.SpacePilots
             if (other.transform.tag == "Player") {
                 ContactPoint contact = other.contacts[0];
 
-                if (contact.point.x < other.transform.position.x) {
-                    Debug.Log("droite");
+                Debug.Log("contact : " + contact.point.x);
+                Debug.Log("position : " + other.transform.position.x);
 
-                    rbBall.velocity = new Vector3(-ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+                if (contact.point.x < other.transform.position.x) {
+                    //Debug.Log("droite");
+
+                    //rbBall.velocity = new Vector3(-ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+
+                    if (PhotonNetwork.IsMasterClient) {
+                        //Player Bas
+                        rbBall.velocity = new Vector3(-ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+                    } else {
+                        //Player Haut
+                        rbBall.velocity = new Vector3(ballInitialVelocity, -ballInitialVelocity, 0) * 0.02f;
+                    }
                 }
                 else if (contact.point.x > other.transform.position.x) {
-                    Debug.Log("gauche");
+                    //Debug.Log("gauche");
 
-                    rbBall.velocity = new Vector3(ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+                    //rbBall.velocity = new Vector3(ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+
+                    if (PhotonNetwork.IsMasterClient) {
+                        //Player Bas
+                        rbBall.velocity = new Vector3(ballInitialVelocity, ballInitialVelocity, 0) * 0.02f;
+                    }
+                    else {
+                        //Player Haut
+                        rbBall.velocity = new Vector3(-ballInitialVelocity, -ballInitialVelocity, 0) * 0.02f;
+                    }
                 }
                 else {
-                    Debug.Log("milieu");
+                    //Debug.Log("milieu");
 
                     rbBall.velocity = new Vector3(0, 0, 0) * 0.2f;
                 }
