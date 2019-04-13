@@ -30,7 +30,7 @@ namespace Com.JaisonFontaine.SpacePilots {
         public GameObject cloneBall;
 
         public bool isReady = false;
-        public bool allReady = false;
+        //public float timeReadyPlayer1 = 0.0001f;
 
         public bool ballInPlay = false;
 
@@ -47,14 +47,12 @@ namespace Com.JaisonFontaine.SpacePilots {
             {
                 // We own this player: send the others our data
                 stream.SendNext(isReady);
-                stream.SendNext(allReady);
                 stream.SendNext(ballInPlay);
             }
             else
             {
                 // Network player, receive data
                 this.isReady = (bool)stream.ReceiveNext();
-                this.allReady = (bool)stream.ReceiveNext();
                 this.ballInPlay = (bool)stream.ReceiveNext();
             }
         }
@@ -100,19 +98,24 @@ namespace Com.JaisonFontaine.SpacePilots {
                     GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID, false);
                     //Debug.Log("Player 2 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID);
                 }
+
+                SpawnBall(2);
+
+                GameManager.Instance.GetComponent<PhotonView>().RPC("RpcCountdown", RpcTarget.All);
             }
             else {
                 GameManager.Instance.GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, false);
+                SpawnBall(1);
                 //Debug.Log("Player 1 : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID);
             }
         }
 
         void FixedUpdate() {
-            //if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady && allReady == false) {
-                //allReady = true;
+            /*if (PhotonNetwork.CurrentRoom.PlayerCount == 2 && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady && PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady && allReady == false) {
+                allReady = true;
                 //Debug.Log("Player 1 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().isReady);
                 //Debug.Log("Player 2 isReady : " + PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().isReady);
-            //}
+            }*/
         }
 
         void Update() {
@@ -136,20 +139,45 @@ namespace Com.JaisonFontaine.SpacePilots {
                 playerPos = new Vector3(Mathf.Clamp(xPos, -2.1f, 2.1f), transform.position.y, 0f);
                 transform.position = playerPos;
 
-                //if (Input.GetKeyDown(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                if (PhotonNetwork.CurrentRoom.PlayerCount == 1) {
+                    //if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
+                    /*if (Input.GetButtonDown("Fire1") && isReady == false) {
+                        SpawnBall(1);
+                    }*/
+
+                    //if (Input.GetKeyDown(KeyCode.Space) && isReady == true && ballInPlay == false) {
+                    if (Input.GetButtonDown("Fire1") && isReady == true && ballInPlay == false) {
+                        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        ShootBall();
+                    }
+                }
+                else if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                    //if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
+                    /*if (Input.GetButtonDown("Fire1") && isReady == false) {
+                        SpawnBall(2);
+                    }*/
+
+                    //if (Input.GetKeyDown(KeyCode.Space) && allReady == true && ballInPlay == false) {
+                    if (Input.GetButtonDown("Fire1") && isReady == true && GameManager.Instance.allReady == true && ballInPlay == false) {
+                        target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
+                        ShootBall();
+                    }
+                }
+
+                /*//if (Input.GetKeyDown(KeyCode.Space) && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
                 //if (Input.GetKeyDown(KeyCode.Space) && isReady == false) {
-                //if (Input.GetButtonDown("Fire1") && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
-                if (Input.GetButtonDown("Fire1") && isReady == false) {
+                if (Input.GetButtonDown("Fire1") && isReady == false && PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                //if (Input.GetButtonDown("Fire1") && isReady == false) {
                     SpawnBall();
                 }
 
                 //if (Input.GetKeyDown(KeyCode.Space) && allReady == true && ballInPlay == false) {
                 //if (Input.GetKeyDown(KeyCode.Space) && isReady == true && ballInPlay == false) {
-                //if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
-                if (Input.GetButtonDown("Fire1") && isReady == true && ballInPlay == false) {
+                if (Input.GetButtonDown("Fire1") && allReady == true && ballInPlay == false) {
+                //if (Input.GetButtonDown("Fire1") && isReady == true && ballInPlay == false) {
                     target = Camera.main.ScreenToWorldPoint(Input.mousePosition);
                     ShootBall();
-                }
+                }*/
             }
 #else
             /*Touch touch = Input.GetTouch(0);
@@ -174,9 +202,13 @@ namespace Com.JaisonFontaine.SpacePilots {
 
         #endregion
 
+        public void SpawnBall(int playerCount) {
+            /*if (playerCount == 1) {
+                allReady = true;
+            }*/
 
-        public void SpawnBall() {
             isReady = true;
+
             ballInPlay = false;
 
             cloneBall =  PhotonNetwork.Instantiate(ball.name, spawnBall.transform.position, Quaternion.identity, 0) as GameObject;

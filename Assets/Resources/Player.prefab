@@ -195,8 +195,8 @@ MonoBehaviour:
   spawnBall: {fileID: 0}
   cloneBall: {fileID: 0}
   isReady: 0
-  allReady: 0
   ballInPlay: 0
+  ballExist: 0
   livesPlayer: 3
 --- !u!114 &114927660227354840
 MonoBehaviour:

@@ -24,6 +24,7 @@ namespace Com.JaisonFontaine.SpacePilots
         public GameObject[] listBricks;
         public int nbBricks = 35;
         public float resetDelay = 1f;
+        public bool allReady = false;
 
         #endregion
 
@@ -75,7 +76,8 @@ namespace Com.JaisonFontaine.SpacePilots
                 Debug.LogError("PhotonNetwork : Trying to Load a level but we are not the master Client");
             }
             Debug.LogFormat("PhotonNetwork : Loading Level : {0}", PhotonNetwork.CurrentRoom.PlayerCount);
-            PhotonNetwork.LoadLevel("Main");
+            //PhotonNetwork.LoadLevel("Main");
+            PhotonNetwork.LoadLevel("Main2");
         }
 
 
@@ -161,30 +163,34 @@ namespace Com.JaisonFontaine.SpacePilots
 
         public void LoseLife1(GameObject ball, int idPlayerBall)
         {
-            GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, true);
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                GetComponent<PhotonView>().RPC("RpcMajLife1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].ViewID, true);
+                GetComponent<PhotonView>().RPC("RpcCheckGameOver1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().livesPlayer);
+            }     
 
             GetComponent<PhotonView>().RPC("RpcDestroyBall", RpcTarget.All, ball.GetPhotonView().ViewID);
 
-            PhotonView.Find(idPlayerBall).GetComponent<PlayerController>().SpawnBall();
+            PhotonView.Find(idPlayerBall).GetComponent<PlayerController>().SpawnBall(2);
 
             //Instantiate(deathParticles, transform.position, Quaternion.identity);
             //Invoke("SetupPaddle", resetDelay);
 
-            GetComponent<PhotonView>().RPC("RpcCheckGameOver1", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[1].OwnerActorNr].GetComponent<PlayerController>().livesPlayer);
+            
         }
 
         public void LoseLife2(GameObject ball, int idPlayerBall)
         {
-            GetComponent<PhotonView>().RPC("RpcMajLife2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID, true);
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                GetComponent<PhotonView>().RPC("RpcMajLife2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].ViewID, true);
+                GetComponent<PhotonView>().RPC("RpcCheckGameOver2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().livesPlayer);
+            }
 
             GetComponent<PhotonView>().RPC("RpcDestroyBall", RpcTarget.All, ball.GetPhotonView().ViewID);
 
-            PhotonView.Find(idPlayerBall).GetComponent<PlayerController>().SpawnBall();
+            PhotonView.Find(idPlayerBall).GetComponent<PlayerController>().SpawnBall(2);
 
             //Instantiate(deathParticles, transform.position, Quaternion.identity);
             //Invoke("SetupPaddle", resetDelay);
-
-            GetComponent<PhotonView>().RPC("RpcCheckGameOver2", RpcTarget.All, PhotonNetwork.PhotonViews[PhotonNetwork.PhotonViews[2].OwnerActorNr].GetComponent<PlayerController>().livesPlayer);
         }
 
         [PunRPC]
@@ -244,19 +250,23 @@ namespace Com.JaisonFontaine.SpacePilots
         [PunRPC]
         public void RpcMajLife1(int idPlayer1, bool isLoseLife1)
         {
-            if (isLoseLife1 && PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer > 0) {
-                PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer--;
-            }
+            if (PhotonNetwork.CurrentRoom.PlayerCount == 2) {
+                if (isLoseLife1 && PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer > 0) {
+                    PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer--;
+                }
 
-            if (PhotonNetwork.IsMasterClient)
-            {
-                //Player Bas
-                GameObject.Find("LivesPlayer1").GetComponent<Text>().text = PhotonView.Find(idPlayer1).Owner.NickName + " : " + PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer;
+                if (PhotonNetwork.IsMasterClient) {
+                    //Player Bas
+                    GameObject.Find("LivesPlayer1").GetComponent<Text>().text = PhotonView.Find(idPlayer1).Owner.NickName + " : " + PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer;
+                }
+                else {
+                    //Player Haut
+                    GameObject.Find("LivesPlayer2").GetComponent<Text>().text = PhotonView.Find(idPlayer1).Owner.NickName + " : " + PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer;
+                }
             }
-            else
-            {
-                //Player Haut
-                GameObject.Find("LivesPlayer2").GetComponent<Text>().text = PhotonView.Find(idPlayer1).Owner.NickName + " : " + PhotonView.Find(idPlayer1).GetComponent<PlayerController>().livesPlayer;
+            else {
+                //Player Bas
+                GameObject.Find("LivesPlayer1").GetComponent<Text>().text = PhotonView.Find(idPlayer1).Owner.NickName;
             }
         }
 
@@ -278,6 +288,30 @@ namespace Com.JaisonFontaine.SpacePilots
                 //Player Haut
                 GameObject.Find("LivesPlayer1").GetComponent<Text>().text = PhotonView.Find(idPlayer2).Owner.NickName + " : " + PhotonView.Find(idPlayer2).GetComponent<PlayerController>().livesPlayer;
             }
+        }
+
+        IEnumerator CountdownReady()
+        {
+            Debug.Log("3");
+            GameObject.Find("Countdown").GetComponent<Text>().text = "3";
+            yield return new WaitForSeconds(1f);
+            Debug.Log("2");
+            GameObject.Find("Countdown").GetComponent<Text>().text = "2";
+            yield return new WaitForSeconds(2f);
+            Debug.Log("1");
+            GameObject.Find("Countdown").GetComponent<Text>().text = "1";
+            yield return new WaitForSeconds(3f);
+            Debug.Log("Go!!!");
+            GameObject.Find("Countdown").GetComponent<Text>().text = "Go!!!";
+            allReady = true;
+            yield return new WaitForSeconds(3.25f);
+            GameObject.Find("Countdown").SetActive(false);
+        }
+
+        [PunRPC]
+        public void RpcCountdown()
+        {
+            StartCoroutine(CountdownReady());
         }
 
         [PunRPC]

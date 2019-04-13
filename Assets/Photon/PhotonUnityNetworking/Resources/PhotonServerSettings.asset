@@ -50,4 +50,5 @@ MonoBehaviour:
   - RpcCheckGameOver1
   - RpcCheckGameOver2
   - RpcDestroyAllBricks
+  - RpcCountdown
   DisableAutoOpenWizard: 1

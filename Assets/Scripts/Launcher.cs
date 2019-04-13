@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using Photon.Pun;
 using Photon.Realtime;
 
@@ -146,7 +147,7 @@ namespace Com.JaisonFontaine.SpacePilots {
                 // #Critical
                 // Load the Room Level.
                 //PhotonNetwork.LoadLevel("Room for 1");
-                PhotonNetwork.LoadLevel("Main");
+                PhotonNetwork.LoadLevel("Main1");
             }
         }
 
