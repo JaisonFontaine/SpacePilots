@@ -4,7 +4,8 @@
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
@@ -12,43 +13,31 @@ MonoBehaviour:
   m_Name: PhotonServerSettings
   m_EditorClassIdentifier: 
   AppSettings:
-    AppIdRealtime: aa39d5d4-df5c-467e-8550-89bb568c85ea
+    AppIdRealtime: 
     AppIdChat: 
     AppIdVoice: 
     AppVersion: 
     UseNameServer: 1
-    FixedRegion: eu
+    FixedRegion: 
     Server: 
     Port: 0
     Protocol: 0
     EnableLobbyStatistics: 0
     NetworkLogging: 1
-  StartInOfflineMode: 0
-  PunLogging: 2
+  StartInOfflineMode: 1
+  PunLogging: 0
   EnableSupportLogger: 0
   RunInBackground: 1
   RpcList:
   - DestroySpaceship
   - Fire
   - RespawnSpaceship
-  - SetParentBall
-  - RpcMajLife1
-  - RpcMajLife2
-  - SpawnBricks
-  - TagBricks
-  - Spawn
-  - RpcSpawnBall
-  - RpcShootBall
-  - RpcSpawnBricks
-  - RpcSetParentBall
-  - RpcSetParent
-  - RpcDestroyBall
-  - RpcMajName
-  - RpcDestroyBrick
-  - RpcMajName1
-  - RpcMajName2
   - RpcCheckGameOver1
   - RpcCheckGameOver2
-  - RpcDestroyAllBricks
   - RpcCountdown
+  - RpcDestroyBall
+  - RpcDestroyBrick
+  - RpcMajLife1
+  - RpcMajLife2
+  - RpcSetParent
   DisableAutoOpenWizard: 1
